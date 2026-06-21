@@ -4,10 +4,13 @@
   /* ---------- THEME TOGGLE ---------- */
   var root = document.documentElement;
   var themeToggle = document.getElementById('themeToggle');
+  var themeColorMeta = document.getElementById('themeColorMeta');
   var savedTheme = localStorage.getItem('ace-theme');
   if(savedTheme){ root.setAttribute('data-theme', savedTheme); }
   function syncThemeIcon(){
-    themeToggle.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    if(themeColorMeta){ themeColorMeta.setAttribute('content', isDark ? '#100F1D' : '#FFFFFF'); }
   }
   syncThemeIcon();
   themeToggle.addEventListener('click', function(){

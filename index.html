@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Build Your Personal AI Career Engine — Step-by-Step Guide</title>
 <meta name="description" content="A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.">
+<meta name="theme-color" content="#FFFFFF" id="themeColorMeta">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,17 +127,19 @@
     </div>
   </section>
 
-  <!-- ============ STICKY MOBILE STEPPER ============ -->
-  <div class="stepper" id="stepper">
-    <button class="stepper-pill" data-goto="phase-1" style="--accent:#FF4759"><span class="num">1</span>About Me</button>
-    <button class="stepper-pill" data-goto="phase-2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</button>
-    <button class="stepper-pill" data-goto="phase-3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</button>
-    <button class="stepper-pill" data-goto="phase-4" style="--accent:#00C2A8"><span class="num">4</span>Generate</button>
-  </div>
-
   <!-- ============ JOURNEY ============ -->
   <section class="section section-soft journey">
     <div class="container journey-inner">
+
+      <!-- Sticky mobile stepper: lives inside the journey container so it
+           naturally un-sticks once Phase 4 ends, instead of staying pinned
+           over Maintenance / Tips / Footer for the rest of the page. -->
+      <div class="stepper" id="stepper">
+        <button class="stepper-pill" data-goto="phase-1" style="--accent:#FF4759"><span class="num">1</span>About Me</button>
+        <button class="stepper-pill" data-goto="phase-2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</button>
+        <button class="stepper-pill" data-goto="phase-3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</button>
+        <button class="stepper-pill" data-goto="phase-4" style="--accent:#00C2A8"><span class="num">4</span>Generate</button>
+      </div>
 
       <!-- Desktop rail -->
       <nav class="rail" aria-hidden="true">
