@@ -34,6 +34,26 @@
   }, {passive:true});
   toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 
+  /* ---------- MOBILE MENU (hamburger) ---------- */
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if(menuToggle && mobileMenu){
+    function closeMenu(){
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    menuToggle.addEventListener('click', function(){
+      var isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth >= 760){ closeMenu(); }
+    });
+  }
+
   /* ---------- GOTO BUTTONS (rail + stepper + nav) ---------- */
   document.querySelectorAll('[data-goto]').forEach(function(btn){
     btn.addEventListener('click', function(){

@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Build Your Personal AI Career Engine — Step-by-Step Guide</title>
 <meta name="description" content="A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
@@ -18,7 +18,7 @@
 
 <header class="site">
   <div class="container header-inner">
-    <a href="#top" class="brand"><span class="brand-mark">⚙️</span> Career Engine</a>
+    <a href="#top" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
     <nav class="main">
       <a href="#tools">Tools</a>
       <a href="#phase-1">Guide</a>
@@ -26,8 +26,20 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#tips">Tips</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger"></span>
+      </button>
+    </div>
   </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#tools">🧰 Tools</a>
+    <a href="#phase-1">🗺️ Guide</a>
+    <a href="#phase-4">✨ Prompts</a>
+    <a href="#portfolio">🐙 Portfolio</a>
+    <a href="#tips">💡 Tips</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -622,12 +634,12 @@ Keep it under 80 words. Make it forward-facing, confident, and grounded in my ac
         <table class="kb">
           <thead><tr><th>Life event</th><th>File to update</th></tr></thead>
           <tbody>
-            <tr><td class="event">New job or role</td><td><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event">New qualification or certification</td><td><span class="tag">Both files</span></td></tr>
-            <tr><td class="event">New project or achievement</td><td><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event">Change in career direction</td><td><span class="tag">About_Me.docx</span></td></tr>
-            <tr><td class="event">New skill acquired</td><td><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event">Published work or award</td><td><span class="tag">Both files</span></td></tr>
+            <tr><td class="event" data-label="Life event">New job or role</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+            <tr><td class="event" data-label="Life event">New qualification or certification</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
+            <tr><td class="event" data-label="Life event">New project or achievement</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+            <tr><td class="event" data-label="Life event">Change in career direction</td><td data-label="File to update"><span class="tag">About_Me.docx</span></td></tr>
+            <tr><td class="event" data-label="Life event">New skill acquired</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+            <tr><td class="event" data-label="Life event">Published work or award</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
           </tbody>
         </table>
       </div>
