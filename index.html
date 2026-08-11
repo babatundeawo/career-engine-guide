@@ -10,24 +10,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
 
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <header class="site">
   <div class="container header-inner">
-    <a href="#top" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+    <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
     <nav class="main">
-      <a href="#tools">Tools</a>
-      <a href="#phase-1">Guide</a>
-      <a href="#phase-4">Prompts</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#tips">Tips</a>
+      <a href="index.html" class="current">Home</a>
+      <div class="nav-drop "><button type="button">Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav-drop-panel"><a href="phase-1-about-me.html"><span class="num" style="background:#FF4759">1</span>About Me</a>
+<a href="phase-2-master-cv.html"><span class="num" style="background:#4F5BFF">2</span>Master CV</a>
+<a href="phase-3-claude-setup.html"><span class="num" style="background:#FFB400">3</span>Claude Setup</a>
+<a href="phase-4-generate.html"><span class="num" style="background:#00C2A8">4</span>Generate</a></div></div>
+      <a href="portfolio.html" class="">Portfolio</a>
+      <a href="maintenance.html" class="">Maintenance</a>
+      <a href="tips.html" class="">Tips</a>
     </nav>
     <div class="header-actions">
+      <div class="global-progress" data-global-progress title="Checklist progress across the whole guide">
+        <svg class="ring" viewBox="0 0 16 16"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
+        <span class="gp-text">0 / 17 steps</span>
+      </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span class="burger"></span>
@@ -35,26 +42,30 @@
     </div>
   </div>
   <nav class="mobile-menu" id="mobileMenu">
-    <a href="#tools">🧰 Tools</a>
-    <a href="#phase-1">🗺️ Guide</a>
-    <a href="#phase-4">✨ Prompts</a>
-    <a href="#portfolio">🐙 Portfolio</a>
-    <a href="#tips">💡 Tips</a>
+    <a href="index.html" class="current">🏠 Home</a>
+    <div class="sub-label">Guide</div>
+    <a href="phase-1-about-me.html" class="sub ">1. About Me</a>
+    <a href="phase-2-master-cv.html" class="sub ">2. Master CV</a>
+    <a href="phase-3-claude-setup.html" class="sub ">3. Claude Setup</a>
+    <a href="phase-4-generate.html" class="sub ">4. Generate</a>
+    <hr>
+    <a href="portfolio.html" class="">🐙 Portfolio</a>
+    <a href="maintenance.html" class="">🔁 Maintenance</a>
+    <a href="tips.html" class="">💡 Tips</a>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO ============ -->
   <section class="hero container">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow" style="color:var(--indigo-text)"><span class="dot"></span>Free · No coding required</span>
+        <span class="eyebrow" style="color:var(--indigo-text)"><span class="dot"></span>Free &middot; No coding required</span>
         <h1>Build your personal <span class="accentword">AI career engine</span></h1>
-        <p class="lead">Turn your real history into one living knowledge base — then generate accurate, polished CVs, cover letters, bios and more, on demand, with NotebookLM and Claude.</p>
+        <p class="lead">Turn your real history into one living knowledge base &mdash; then generate accurate, polished CVs, cover letters, bios and more, on demand, with NotebookLM and Claude.</p>
         <div class="hero-ctas">
-          <a href="#tools" class="btn btn-primary">Start the guide ↓</a>
-          <a href="#phase-4" class="btn btn-ghost">Browse sample prompts</a>
+          <a href="phase-1-about-me.html" class="btn btn-primary">Start the guide &rarr;</a>
+          <a href="phase-4-generate.html" class="btn btn-ghost">Browse sample prompts</a>
         </div>
         <div class="hero-meta">
           <span>🧠 NotebookLM</span>
@@ -75,28 +86,15 @@
               <stop offset="1" stop-color="var(--teal)"/>
             </linearGradient>
           </defs>
-          <g class="node-pop" style="animation-delay:.7s">
-            <circle cx="20" cy="210" r="20" fill="var(--coral)"/>
-            <text x="20" y="215" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">1</text>
-          </g>
-          <g class="node-pop" style="animation-delay:.95s">
-            <circle cx="222" cy="128" r="20" fill="var(--indigo)"/>
-            <text x="222" y="133" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">2</text>
-          </g>
-          <g class="node-pop" style="animation-delay:1.2s">
-            <circle cx="382" cy="88" r="20" fill="var(--amber)"/>
-            <text x="382" y="93" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">3</text>
-          </g>
-          <g class="node-pop" style="animation-delay:1.45s">
-            <circle cx="562" cy="50" r="20" fill="var(--teal)"/>
-            <text x="562" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">4</text>
-          </g>
+          <g class="node-pop" style="animation-delay:.7s"><circle cx="20" cy="210" r="20" fill="var(--coral)"/><text x="20" y="215" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">1</text></g>
+          <g class="node-pop" style="animation-delay:.95s"><circle cx="222" cy="128" r="20" fill="var(--indigo)"/><text x="222" y="133" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">2</text></g>
+          <g class="node-pop" style="animation-delay:1.2s"><circle cx="382" cy="88" r="20" fill="var(--amber)"/><text x="382" y="93" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">3</text></g>
+          <g class="node-pop" style="animation-delay:1.45s"><circle cx="562" cy="50" r="20" fill="var(--teal)"/><text x="562" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">4</text></g>
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- ============ TOOLS ============ -->
   <section class="section" id="tools">
     <div class="container">
       <div class="section-head">
@@ -106,578 +104,143 @@
       </div>
       <div class="tool-grid">
         <div class="tool-card" style="--accent:var(--coral);--accent-text:var(--coral-text)">
-          <div class="tool-icon">🧠</div>
-          <h3>NotebookLM</h3>
-          <p>Feeds on your real documents and writes your first "About Me" draft — grounded only in what you give it.</p>
+          <div class="tool-icon">🧠</div><h3>NotebookLM</h3>
+          <p>Feeds on your real documents and writes your first &ldquo;About Me&rdquo; draft &mdash; grounded only in what you give it.</p>
           <span class="tool-cost">FREE</span>
         </div>
         <div class="tool-card" style="--accent:var(--indigo);--accent-text:var(--indigo-text)">
-          <div class="tool-icon">🤖</div>
-          <h3>Claude</h3>
-          <p>Holds your knowledge base permanently and generates every career document you'll ever need from it.</p>
+          <div class="tool-icon">🤖</div><h3>Claude</h3>
+          <p>Holds your knowledge base permanently in a Claude Project and generates every career document you'll ever need from it.</p>
           <span class="tool-cost">FREE</span>
         </div>
         <div class="tool-card" style="--accent:var(--amber);--accent-text:var(--amber-text)">
-          <div class="tool-icon">📄</div>
-          <h3>Word or Docs</h3>
-          <p>Where your Master CV lives — the full, unfiltered record of your career, kept up to date.</p>
+          <div class="tool-icon">📄</div><h3>Word or Docs</h3>
+          <p>Where your Master CV lives &mdash; the full, unfiltered record of your career, kept up to date.</p>
           <span class="tool-cost">FREE</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ JOURNEY ============ -->
-  <section class="section section-soft journey">
-    <div class="container journey-inner">
-
-      <!-- Sticky mobile stepper: lives inside the journey container so it
-           naturally un-sticks once Phase 4 ends, instead of staying pinned
-           over Maintenance / Tips / Footer for the rest of the page. -->
-      <div class="stepper" id="stepper">
-        <button class="stepper-pill" data-goto="phase-1" style="--accent:#FF4759"><span class="num">1</span>About Me</button>
-        <button class="stepper-pill" data-goto="phase-2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</button>
-        <button class="stepper-pill" data-goto="phase-3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</button>
-        <button class="stepper-pill" data-goto="phase-4" style="--accent:#00C2A8"><span class="num">4</span>Generate</button>
-      </div>
-
-      <!-- Desktop rail -->
-      <nav class="rail" aria-hidden="true">
-        <div class="rail-track"><div class="rail-fill" id="railFill"></div></div>
-        <ol class="rail-nodes">
-          <li class="rail-node" data-phase="1" style="--accent:#FF4759"><button data-goto="phase-1">1</button><span class="tip">About Me</span></li>
-          <li class="rail-node" data-phase="2" style="--accent:#4F5BFF"><button data-goto="phase-2">2</button><span class="tip">Master CV</span></li>
-          <li class="rail-node" data-phase="3" style="--accent:#FFB400"><button data-goto="phase-3">3</button><span class="tip">Claude Setup</span></li>
-          <li class="rail-node" data-phase="4" style="--accent:#00C2A8"><button data-goto="phase-4">4</button><span class="tip">Generate</span></li>
-        </ol>
-      </nav>
-
-      <div class="phases">
-
-        <!-- ============ PHASE 1 ============ -->
-        <section class="phase" id="phase-1" data-phase="1" style="--accent:#FF4759;--accent-text:#D62839">
-          <div class="phase-head">
-            <div class="phase-num" style="background:var(--accent)">P1</div>
-            <div>
-              <span class="eyebrow">Phase 1 · NotebookLM</span>
-              <h2>Build your About Me document</h2>
-            </div>
-            <span class="phase-progress" data-phase-progress="1">0 / 4 done</span>
-          </div>
-
-          <div class="step-list">
-            <label class="step">
-              <input type="checkbox" data-phase="1" data-id="p1s1">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Open NotebookLM</div>
-                <div class="step-body">Go to <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a> and sign in with your Google account. It's free.</div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="1" data-id="p1s2">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Create a new notebook</div>
-                <div class="step-body">Click <strong>Create New Notebook</strong> and name it <em>"Personal Knowledge Base."</em></div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="1" data-id="p1s3">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Upload your sources</div>
-                <div class="step-body">Add as many as you have:
-                  <ul class="step-list-inline">
-                    <li>Your existing CV or resume</li>
-                    <li>Your LinkedIn profile text (paste it directly)</li>
-                    <li>A portfolio or project summary</li>
-                    <li>A short professional bio or past job descriptions</li>
-                  </ul>
-                </div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="1" data-id="p1s4">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Generate the document, then save it</div>
-                <div class="step-body">Paste this prompt into the NotebookLM chat box, then copy the result into Word or Docs and save as <code>About_Me.docx</code>.
-                  <div class="code-block">
-                    <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#prompt-p1"><span class="label">Copy</span></button></div>
-                    <pre id="prompt-p1">Create a comprehensive professional About Me document based solely on the uploaded information. Include the following sections:
-
-- Personal introduction
-- Core skills and technical competencies
-- Professional experience (with roles, organisations, and dates)
-- Key achievements and measurable outcomes
-- Education and qualifications
-- Certifications and training
-- Notable projects
-- Interests and professional aspirations
-
-Write in a warm, professional first-person voice. Do not invent or add any information not present in the uploaded sources.</pre>
-                  </div>
-                </div>
-              </span>
-            </label>
-          </div>
-        </section>
-
-        <!-- ============ PHASE 2 ============ -->
-        <section class="phase" id="phase-2" data-phase="2" style="--accent:#4F5BFF;--accent-text:#3540D6">
-          <div class="phase-head">
-            <div class="phase-num" style="background:var(--accent)">P2</div>
-            <div>
-              <span class="eyebrow">Phase 2 · Word or Docs</span>
-              <h2>Build your Master CV</h2>
-            </div>
-            <span class="phase-progress" data-phase-progress="2">0 / 4 done</span>
-          </div>
-          <p style="color:var(--ink-soft);margin-bottom:18px;font-size:14.5px;max-width:560px;">This is your complete, unedited career record — not a targeted CV. Length doesn't matter here. Completeness does.</p>
-
-          <div class="step-list">
-            <label class="step">
-              <input type="checkbox" data-phase="2" data-id="p2s1">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Open a blank document</div>
-                <div class="step-body">Start fresh in Microsoft Word or Google Docs.</div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="2" data-id="p2s2">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Add these sections</div>
-                <div class="step-body">
-                  <ul class="step-list-inline">
-                    <li>Full name &amp; contact information</li>
-                    <li>Professional summary</li>
-                    <li>Core skills</li>
-                    <li>Work experience (every role, with dates)</li>
-                    <li>Education &amp; qualifications</li>
-                    <li>Certifications &amp; training</li>
-                    <li>Projects &amp; achievements</li>
-                    <li>Publications and volunteer work (if any)</li>
-                  </ul>
-                </div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="2" data-id="p2s3">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Fill it in — don't hold back</div>
-                <div class="step-body">Include everything. Claude will choose what's relevant later — your job right now is just to get it all down.</div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="2" data-id="p2s4">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Save the file</div>
-                <div class="step-body">Save it as <code>Master_CV.docx</code>. You now have both files ready.</div>
-              </span>
-            </label>
-          </div>
-        </section>
-
-        <!-- ============ PHASE 3 ============ -->
-        <section class="phase" id="phase-3" data-phase="3" style="--accent:#FFB400;--accent-text:#A66800">
-          <div class="phase-head">
-            <div class="phase-num" style="background:var(--accent)">P3</div>
-            <div>
-              <span class="eyebrow">Phase 3 · Claude</span>
-              <h2>Set up your Claude Project</h2>
-            </div>
-            <span class="phase-progress" data-phase-progress="3">0 / 4 done</span>
-          </div>
-
-          <div class="step-list">
-            <label class="step">
-              <input type="checkbox" data-phase="3" data-id="p3s1">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Open Claude</div>
-                <div class="step-body">Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> and sign in. A free account is enough to start.</div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="3" data-id="p3s2">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Create a new project</div>
-                <div class="step-body">In the left sidebar, click <strong>New Project</strong> and name it <em>"Personal Career Engine."</em></div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="3" data-id="p3s3">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Upload both files</div>
-                <div class="step-body">Attach <code>About_Me.docx</code> and <code>Master_CV.docx</code>. These become Claude's permanent knowledge base for this project.</div>
-              </span>
-            </label>
-
-            <label class="step">
-              <input type="checkbox" data-phase="3" data-id="p3s4">
-              <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-              <span class="step-content">
-                <div class="step-title">Paste the system instruction</div>
-                <div class="step-body">Find the <strong>Project Instructions</strong> field in your project settings and paste the block below exactly as written.
-                  <div class="code-block tall">
-                    <div class="code-head"><span class="code-label">Project Instructions</span><button class="copy-btn" data-target="#prompt-instruction"><span class="label">Copy all</span></button></div>
-                    <pre id="prompt-instruction">PRIMARY DIRECTIVE
-
-You are a dedicated personal career document assistant. Your sole purpose is to generate accurate, polished, and professionally formatted career documents — including CVs, cover letters, professional bios, LinkedIn summaries, GitHub READMEs, and grant or scholarship essays — using only the information provided in the files attached to this project.
-
-You must never invent, fabricate, embellish, or infer any experience, qualification, skill, achievement, or personal detail not explicitly present in the uploaded documents. Every output must be a faithful, professional representation of the real person behind these files.
-
-
-KNOWLEDGE BASE RULES
-
-- Draw exclusively from the uploaded About_Me document and Master_CV file.
-- If a request requires information not present in the files, respond: "This detail is not in your uploaded documents. Please add it to your Master CV and re-upload, or provide it directly in this message."
-- Never supplement missing information with assumed or generic content.
-- If two uploaded documents conflict on the same detail, ask the user to clarify before proceeding.
-
-
-DOCUMENT GENERATION STANDARDS
-
-Accuracy
-- All job titles, dates, organisations, qualifications, and skills must match the source files exactly.
-- Do not upgrade titles, extend tenure dates, or add qualifications not listed.
-
-Tone & Voice
-- CVs and cover letters: formal and professional.
-- Bios and LinkedIn summaries: conversational-professional, first person.
-- Scholarship and grant essays: personal, narrative, and structured.
-- GitHub READMEs: clear, scannable, and developer-appropriate.
-
-Formatting
-- CVs: ATS-friendly layout — clear headings, consistent dates, bullet points for responsibilities and achievements.
-- Cover letters: three to four paragraphs — opening hook, relevant experience, value proposition, and call to action.
-- LinkedIn summaries: keyword-rich, punchy, under 300 words.
-- GitHub READMEs: structured markdown — intro, tech stack, projects, roadmap, and contact links.
-- Grant or scholarship essays: narrative arc — background, motivation, goals, and impact.
-
-Length Targets
-- CV: as long as the content honestly requires — never padded.
-- Cover letter: one page maximum.
-- Short bio: 80 to 120 words.
-- Long bio: 250 to 400 words.
-- LinkedIn summary: 200 to 300 words.
-- Scholarship or grant essay: match the word limit specified by the user.
-
-
-TAILORING INSTRUCTIONS
-
-When the user provides a specific job description, role, or opportunity:
-1. Identify the key requirements and keywords from the role.
-2. Map them against the uploaded documents.
-3. Prioritise and foreground matching experience and skills.
-4. Reframe existing experience using language from the job description where honest and accurate.
-5. Flag any significant gaps: "Note: The role requires [X], which does not appear in your current documents. Consider adding this to your Master CV if applicable."
-
-
-OUTPUT FORMAT
-
-- Deliver all documents ready to copy — no preamble unless asked.
-- For CVs and formal documents, offer a formatted Word-compatible version on request.
-- For multiple documents in one message, deliver each under a clear label.
-- Always end every response with: "Would you like me to adjust the tone, length, format, or tailor this further for a specific role or opportunity?"
-
-
-WHAT YOU WILL NOT DO
-
-- Invent or fabricate any career detail under any circumstances.
-- Generate generic template documents not grounded in the user's files.
-- Apply decorative CV formatting that is not ATS-compatible unless explicitly requested.
-- Provide legal, visa, financial, or medical advice.
-- Generate content unrelated to career documentation.</pre>
-                  </div>
-                </div>
-              </span>
-            </label>
-          </div>
-        </section>
-
-        <!-- ============ PHASE 4 ============ -->
-        <section class="phase" id="phase-4" data-phase="4" style="--accent:#00C2A8;--accent-text:#00876F">
-          <div class="phase-head">
-            <div class="phase-num" style="background:var(--accent)">P4</div>
-            <div>
-              <span class="eyebrow">Phase 4 · Generate</span>
-              <h2>Turn it into real documents</h2>
-            </div>
-          </div>
-          <p style="color:var(--ink-soft);max-width:600px;margin-bottom:8px;font-size:15px;">Open your Claude Project and start asking. The more context you give — a job description, a word limit, a target audience — the sharper the result. Tap any card below to open it, read the prompt, and copy it straight into Claude.</p>
-
-          <div class="prompt-grid">
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">📋</span>Tailored CV<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-cv"><span class="label">Copy</span></button></div>
-                  <pre id="pr-cv">Create a tailored CV for a [Job Title] role at [Company Name].
-
-The job description is:
-[Paste the full job description here]
-
-Use my uploaded documents as the source of truth. Prioritise skills and experience most relevant to this role. Format it cleanly for ATS systems.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">✉️</span>Cover letter<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-cl"><span class="label">Copy</span></button></div>
-                  <pre id="pr-cl">Write a professional cover letter for a [Job Title] position at [Organisation Name].
-
-The role requires: [paste key requirements or full job description]
-
-Keep it under one page. Open with a strong hook, connect my experience to their needs, and close with a clear call to action.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">💼</span>LinkedIn summary<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-li"><span class="label">Copy</span></button></div>
-                  <pre id="pr-li">Write a professional LinkedIn About section for me, optimised for a career in [target role or industry].
-
-Keep it under 300 words. Use a first-person voice, make it keyword-rich for recruiters, and let my genuine personality come through.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">🛠️</span>GitHub README<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-gh"><span class="label">Copy</span></button></div>
-                  <pre id="pr-gh">Generate a professional GitHub profile README based on my uploaded documents.
-
-Include: a personal intro, my tech stack, current learning projects, this year's roadmap, and contact or social links. Format it in clean markdown.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">🪪</span>Short bio<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-sb"><span class="label">Copy</span></button></div>
-                  <pre id="pr-sb">Write a 100-word professional bio suitable for a [conference speaker profile / award submission / portfolio website / publication].
-
-Keep the tone warm and professional. Write in third person.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">📖</span>Long bio<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-lb"><span class="label">Copy</span></button></div>
-                  <pre id="pr-lb">Write a 350-word professional bio for my personal website.
-
-Write in first person. Cover my background, what I do, what drives me, key achievements, and where I am headed. Keep it engaging and human.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">🎓</span>Scholarship essay<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-sch"><span class="label">Copy</span></button></div>
-                  <pre id="pr-sch">Draft a [word count]-word scholarship essay for the [Name of Scholarship or Grant].
-
-The application prompt is:
-[Paste the exact question or prompt here]
-
-Draw only from my uploaded documents. Use a clear narrative arc: background, motivation, goals, and intended impact.</pre>
-                </div>
-              </div>
-            </details>
-
-            <details class="prompt-card">
-              <summary><span class="prompt-icon">🔁</span>Career pivot summary<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-              <div class="prompt-body">
-                <div class="code-block">
-                  <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-piv"><span class="label">Copy</span></button></div>
-                  <pre id="pr-piv">Rewrite my professional summary for a pivot into [new industry or role].
-
-Keep it under 80 words. Make it forward-facing, confident, and grounded in my actual transferable skills and experience.</pre>
-                </div>
-              </div>
-            </details>
-
-          </div>
-        </section>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BONUS: GITHUB PORTFOLIO ============ -->
-  <section class="section" id="portfolio">
+  <section class="section section-soft">
     <div class="container">
-      <div class="phase-head">
-        <div class="phase-num" style="background:var(--violet)">🐙</div>
-        <div>
-          <span class="eyebrow" style="color:var(--violet-text)">Bonus · GitHub Pages</span>
-          <h2>Build &amp; publish a portfolio webpage</h2>
-        </div>
-        <span class="phase-progress" data-phase-progress="5">0 / 5 done</span>
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--ink-faint)">The journey</span>
+        <h2>Four phases, one living system</h2>
+        <p>Each phase is its own page now &mdash; work through them in order, or jump straight to the one you need. Your checklist progress is saved automatically as you go.</p>
       </div>
-      <p style="color:var(--ink-soft);max-width:600px;margin-bottom:28px;font-size:15px;">
-        Your CV gets you shortlisted. A portfolio gets you remembered. Here's how to put a simple
-        HTML, CSS and JS site live on the internet — for free — in about ten minutes.
-      </p>
-
-      <div class="step-list">
-        <label class="step">
-          <input type="checkbox" data-phase="5" data-id="p5s1">
-          <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="step-content">
-            <div class="step-title">Create a free GitHub account</div>
-            <div class="step-body">Go to <a href="https://github.com" target="_blank" rel="noopener">github.com</a> and sign up if you don't already have an account. Pick a clean, professional username — it becomes part of your live web address.</div>
-          </span>
-        </label>
-
-        <label class="step">
-          <input type="checkbox" data-phase="5" data-id="p5s2">
-          <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="step-content">
-            <div class="step-title">Create a new repository</div>
-            <div class="step-body">Click the <strong>+</strong> icon top-right → <strong>New repository</strong>. You have two options:
-              <ul class="step-list-inline">
-                <li><strong>Main personal site:</strong> name it exactly <code>yourusername.github.io</code> (replace with your real username)</li>
-                <li><strong>Project site:</strong> name it anything, e.g. <code>my-portfolio</code></li>
-              </ul>
-              Set it to <strong>Public</strong>, then click <strong>Create repository</strong>.
-            </div>
-          </span>
-        </label>
-
-        <label class="step">
-          <input type="checkbox" data-phase="5" data-id="p5s3">
-          <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="step-content">
-            <div class="step-title">Add your three files to the repo root</div>
-            <div class="step-body">Keep your project as separate files, the same way this guide is built:
-              <ul class="step-list-inline">
-                <li><code>index.html</code> — your markup and content</li>
-                <li><code>style.css</code> — all your visual design</li>
-                <li><code>script.js</code> — any interactivity</li>
-              </ul>
-              Drag and drop all three into the repository through <strong>Add file → Upload files</strong> on the GitHub website, or push them with Git from your computer if you're comfortable with the command line. Keep them in the root folder — not inside a subfolder — so GitHub Pages finds <code>index.html</code> automatically.
-            </div>
-          </span>
-        </label>
-
-        <label class="step">
-          <input type="checkbox" data-phase="5" data-id="p5s4">
-          <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="step-content">
-            <div class="step-title">Turn on GitHub Pages</div>
-            <div class="step-body">In your repository, go to <strong>Settings → Pages</strong> (left sidebar). Under <strong>Build and deployment</strong>, set Source to <strong>Deploy from a branch</strong>, choose branch <strong>main</strong> and folder <strong>/ (root)</strong>, then click <strong>Save</strong>.</div>
-          </span>
-        </label>
-
-        <label class="step">
-          <input type="checkbox" data-phase="5" data-id="p5s5">
-          <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-          <span class="step-content">
-            <div class="step-title">Visit your live site</div>
-            <div class="step-body">Wait one to two minutes for the first build, then open your link:
-              <ul class="step-list-inline">
-                <li>Main personal site → <code>https://yourusername.github.io</code></li>
-                <li>Project site → <code>https://yourusername.github.io/repository-name</code></li>
-              </ul>
-              Every time you push a change to <code>main</code>, the live site updates automatically within a minute or two.
-            </div>
-          </span>
-        </label>
-      </div>
-
-      <div class="tip-grid" style="margin-top:24px;">
-        <div class="tip-card"><span class="tip-emoji">🧩</span><h4>What belongs on the page</h4><p>A short hero intro, a skills section, 2–4 real projects with links, and a simple way to reach you. That's a complete portfolio.</p></div>
-        <div class="tip-card"><span class="tip-emoji">🌐</span><h4>Want your own domain?</h4><p>Add a <code>CNAME</code> file containing your domain, or enter it under Settings → Pages → Custom domain, then point your DNS at GitHub.</p></div>
-        <div class="tip-card"><span class="tip-emoji">🔁</span><h4>One repo, endless updates</h4><p>You never re-create the site. Just edit your files and push — GitHub Pages rebuilds it for you, every time.</p></div>
+      <div class="journey-preview">
+        <a class="jp-card" href="phase-1-about-me.html" style="--accent:#FF4759;--accent-text:#D62839">
+          <div class="jp-num" style="background:#FF4759">1</div>
+          <div class="jp-body">
+            <span class="jp-eyebrow">NotebookLM</span>
+            <h3>Build your About Me document</h3>
+            <p>Feed NotebookLM your existing materials and let it draft a grounded first-person introduction.</p>
+            <div class="jp-progress" data-phase-progress="1">0 / 4 done</div>
+          </div>
+          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="jp-card" href="phase-2-master-cv.html" style="--accent:#4F5BFF;--accent-text:#3540D6">
+          <div class="jp-num" style="background:#4F5BFF">2</div>
+          <div class="jp-body">
+            <span class="jp-eyebrow">Word or Docs</span>
+            <h3>Build your Master CV</h3>
+            <p>Write the complete, unfiltered record of your career &mdash; every role, skill, and achievement.</p>
+            <div class="jp-progress" data-phase-progress="2">0 / 4 done</div>
+          </div>
+          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="jp-card" href="phase-3-claude-setup.html" style="--accent:#FFB400;--accent-text:#A66800">
+          <div class="jp-num" style="background:#FFB400">3</div>
+          <div class="jp-body">
+            <span class="jp-eyebrow">Claude</span>
+            <h3>Set up your Claude Project</h3>
+            <p>Upload both files and paste in a system prompt that keeps every output honest and on-brand.</p>
+            <div class="jp-progress" data-phase-progress="3">0 / 4 done</div>
+          </div>
+          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="jp-card" href="phase-4-generate.html" style="--accent:#00C2A8;--accent-text:#00876F">
+          <div class="jp-num" style="background:#00C2A8">4</div>
+          <div class="jp-body">
+            <span class="jp-eyebrow">Generate</span>
+            <h3>Turn it into real documents</h3>
+            <p>Eight ready-to-copy prompts &mdash; tailored CVs, cover letters, bios, README files and more.</p>
+          </div>
+          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ MAINTENANCE ============ -->
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow" style="color:var(--ink-faint)">Stay current</span>
-        <h2>Keep your knowledge base alive</h2>
-        <p>Your documents are only as useful as they are up to date. Re-upload whenever life moves.</p>
+        <span class="eyebrow" style="color:var(--violet-text)">Beyond the core guide</span>
+        <h2>Keep going once you're set up</h2>
       </div>
-      <div class="table-wrap">
-        <table class="kb">
-          <thead><tr><th>Life event</th><th>File to update</th></tr></thead>
-          <tbody>
-            <tr><td class="event" data-label="Life event">New job or role</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event" data-label="Life event">New qualification or certification</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
-            <tr><td class="event" data-label="Life event">New project or achievement</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event" data-label="Life event">Change in career direction</td><td data-label="File to update"><span class="tag">About_Me.docx</span></td></tr>
-            <tr><td class="event" data-label="Life event">New skill acquired</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
-            <tr><td class="event" data-label="Life event">Published work or award</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRO TIPS ============ -->
-  <section class="section section-soft" id="tips">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" style="color:var(--ink-faint)">Pro tips</span>
-        <h2>Get sharper results</h2>
-      </div>
-      <div class="tip-grid">
-        <div class="tip-card"><span class="tip-emoji">📎</span><h4>Always paste the full job description</h4><p>The more context Claude has, the more precisely it can align your real experience to what the role actually needs.</p></div>
-        <div class="tip-card"><span class="tip-emoji">🚩</span><h4>Treat gaps as a to-do list</h4><p>If Claude flags a missing detail, add it to your Master CV and re-upload before regenerating.</p></div>
-        <div class="tip-card"><span class="tip-emoji">🎧</span><h4>Try NotebookLM's Audio Overview</h4><p>Hearing your own career summarised out loud is great interview prep — it helps you tell your story before you're asked to.</p></div>
-        <div class="tip-card"><span class="tip-emoji">🗂️</span><h4>Keep a dated folder</h4><p>Store generated documents in a folder like <em>Career Documents — 2026</em> so nothing gets lost or overwritten.</p></div>
-        <div class="tip-card"><span class="tip-emoji">♾️</span><h4>This isn't just for job hunting</h4><p>The same knowledge base writes grant applications, speaker bios, consulting profiles, and personal website copy.</p></div>
+      <div class="teaser-grid">
+        <a class="teaser-card" href="portfolio.html">
+          <div class="teaser-icon">🐙</div>
+          <h3>Publish a portfolio</h3>
+          <p>Put a simple site live on GitHub Pages, free, in about ten minutes.</p>
+          <span class="teaser-link">Read the guide &rarr;</span>
+        </a>
+        <a class="teaser-card" href="maintenance.html">
+          <div class="teaser-icon">🔁</div>
+          <h3>Keep it current</h3>
+          <p>A quick reference for which file to update whenever life moves.</p>
+          <span class="teaser-link">See the table &rarr;</span>
+        </a>
+        <a class="teaser-card" href="tips.html">
+          <div class="teaser-icon">💡</div>
+          <h3>Pro tips</h3>
+          <p>Small habits that make Claude's output sharper every time.</p>
+          <span class="teaser-link">Get sharper results &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
 
 </main>
-
 <footer class="site">
   <div class="container footer-inner">
-    <p>Built with NotebookLM &amp; Claude · Maintained by Babatunde Awoyemi</p>
-    <p>Your checklist progress is saved privately in this browser only.</p>
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+      <p>A free, step-by-step system for turning your real career history into a living knowledge base &mdash; then generating accurate CVs, cover letters, bios and more on demand.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Guide</h5>
+        <a href="phase-1-about-me.html">1. About Me</a>
+        <a href="phase-2-master-cv.html">2. Master CV</a>
+        <a href="phase-3-claude-setup.html">3. Claude Setup</a>
+        <a href="phase-4-generate.html">4. Generate</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="portfolio.html">GitHub Pages Portfolio</a>
+        <a href="maintenance.html">Keep it current</a>
+        <a href="tips.html">Pro tips</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tools used</h5>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM ↗</a>
+        <a href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi</p>
+    <p>Your checklist progress is saved privately in this browser only &mdash; nothing is uploaded anywhere.</p>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
-<script src="script.js"></script>
+<script src="js/app.js"></script>
+<script src="js/checklist.js"></script>
 
 </body>
 </html>

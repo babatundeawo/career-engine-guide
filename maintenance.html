@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Keep Your Knowledge Base Alive — AI Career Engine</title>
+<meta name="description" content="A quick reference table for which file to update whenever your career changes.">
+<meta name="theme-color" content="#FFFFFF" id="themeColorMeta">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/guide.css">
+
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+    <nav class="main">
+      <a href="index.html" class="">Home</a>
+      <div class="nav-drop "><button type="button">Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav-drop-panel"><a href="phase-1-about-me.html"><span class="num" style="background:#FF4759">1</span>About Me</a>
+<a href="phase-2-master-cv.html"><span class="num" style="background:#4F5BFF">2</span>Master CV</a>
+<a href="phase-3-claude-setup.html"><span class="num" style="background:#FFB400">3</span>Claude Setup</a>
+<a href="phase-4-generate.html"><span class="num" style="background:#00C2A8">4</span>Generate</a></div></div>
+      <a href="portfolio.html" class="">Portfolio</a>
+      <a href="maintenance.html" class="current">Maintenance</a>
+      <a href="tips.html" class="">Tips</a>
+    </nav>
+    <div class="header-actions">
+      <div class="global-progress" data-global-progress title="Checklist progress across the whole guide">
+        <svg class="ring" viewBox="0 0 16 16"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
+        <span class="gp-text">0 / 17 steps</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="">🏠 Home</a>
+    <div class="sub-label">Guide</div>
+    <a href="phase-1-about-me.html" class="sub ">1. About Me</a>
+    <a href="phase-2-master-cv.html" class="sub ">2. Master CV</a>
+    <a href="phase-3-claude-setup.html" class="sub ">3. Claude Setup</a>
+    <a href="phase-4-generate.html" class="sub ">4. Generate</a>
+    <hr>
+    <a href="portfolio.html" class="">🐙 Portfolio</a>
+    <a href="maintenance.html" class="current">🔁 Maintenance</a>
+    <a href="tips.html" class="">💡 Tips</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="page-hero container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Maintenance</span></div>
+  </div>
+  <div class="container">
+    <div class="stepper">
+  <a href="phase-1-about-me.html" class="stepper-pill " data-phase="1" style="--accent:#FF4759"><span class="num">1</span>About Me</a>
+  <a href="phase-2-master-cv.html" class="stepper-pill " data-phase="2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</a>
+  <a href="phase-3-claude-setup.html" class="stepper-pill " data-phase="3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</a>
+  <a href="phase-4-generate.html" class="stepper-pill " data-phase="4" style="--accent:#00C2A8"><span class="num">4</span>Generate</a>
+</div>
+    <div class="guide-layout">
+      <nav class="rail" aria-label="Guide sections">
+  <ol class="rail-list">
+    <li><a href="phase-1-about-me.html" class="" data-phase="1"><span class="num">1</span>About Me</a></li>
+    <li><a href="phase-2-master-cv.html" class="" data-phase="2"><span class="num">2</span>Master CV</a></li>
+    <li><a href="phase-3-claude-setup.html" class="" data-phase="3"><span class="num">3</span>Claude Setup</a></li>
+    <li><a href="phase-4-generate.html" class="" data-phase="4"><span class="num">4</span>Generate</a></li>
+  </ol>
+  <div class="rail-divider"></div>
+  <ol class="rail-list rail-bonus">
+    <li><a href="portfolio.html" class=""><span class="num">🐙</span>Portfolio</a></li>
+    <li><a href="maintenance.html" class="active"><span class="num">🔁</span>Maintenance</a></li>
+    <li><a href="tips.html" class=""><span class="num">💡</span>Pro tips</a></li>
+  </ol>
+</nav>
+      <section class="phase" style="--accent:var(--indigo);--accent-text:var(--indigo-text)">
+        <div class="phase-head">
+          <div class="phase-num" style="background:var(--indigo)">🔁</div>
+          <div><span class="eyebrow" style="color:var(--indigo-text)">Stay current</span><h1>Keep your knowledge base alive</h1></div>
+        </div>
+        <p class="phase-intro">Your documents are only as useful as they are up to date. Re-upload whenever life moves &mdash; a stale knowledge base produces stale documents.</p>
+
+        <div class="table-wrap">
+          <table class="kb">
+            <thead><tr><th>Life event</th><th>File to update</th></tr></thead>
+            <tbody>
+              <tr><td class="event" data-label="Life event">New job or role</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+              <tr><td class="event" data-label="Life event">New qualification or certification</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
+              <tr><td class="event" data-label="Life event">New project or achievement</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+              <tr><td class="event" data-label="Life event">Change in career direction</td><td data-label="File to update"><span class="tag">About_Me.docx</span></td></tr>
+              <tr><td class="event" data-label="Life event">New skill acquired</td><td data-label="File to update"><span class="tag">Master_CV.docx</span></td></tr>
+              <tr><td class="event" data-label="Life event">Published work or award</td><td data-label="File to update"><span class="tag">Both files</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tip-grid" style="margin-top:28px;">
+          <div class="tip-card"><span class="tip-emoji">📌</span><h4>Re-upload, don't append</h4><p>When you update a file, replace it in your Claude Project's knowledge rather than adding a second, older version alongside it.</p></div>
+          <div class="tip-card"><span class="tip-emoji">🗓️</span><h4>Set a quarterly reminder</h4><p>Even with no major life event, a 15-minute quarterly review catches small wins you'd otherwise forget to log.</p></div>
+        </div>
+
+        <div class="phase-pager">
+<a class="pager-link prev" href="portfolio.html"><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span><span class="pager-meta">Back</span><span class="pager-title">Portfolio</span></span></a>
+<a class="pager-link next" href="tips.html"><span><span class="pager-meta">Next</span><span class="pager-title">Pro tips</span></span><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+      </section>
+    </div>
+  </div>
+
+</main>
+<footer class="site">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+      <p>A free, step-by-step system for turning your real career history into a living knowledge base &mdash; then generating accurate CVs, cover letters, bios and more on demand.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Guide</h5>
+        <a href="phase-1-about-me.html">1. About Me</a>
+        <a href="phase-2-master-cv.html">2. Master CV</a>
+        <a href="phase-3-claude-setup.html">3. Claude Setup</a>
+        <a href="phase-4-generate.html">4. Generate</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="portfolio.html">GitHub Pages Portfolio</a>
+        <a href="maintenance.html">Keep it current</a>
+        <a href="tips.html">Pro tips</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tools used</h5>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM ↗</a>
+        <a href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi</p>
+    <p>Your checklist progress is saved privately in this browser only &mdash; nothing is uploaded anywhere.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="js/app.js"></script>
+<script src="js/checklist.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Phase 4 · Generate Career Documents — AI Career Engine</title>
+<meta name="description" content="Eight ready-to-copy prompts for tailored CVs, cover letters, LinkedIn summaries, bios, README files and more.">
+<meta name="theme-color" content="#FFFFFF" id="themeColorMeta">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/guide.css">
+
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+    <nav class="main">
+      <a href="index.html" class="">Home</a>
+      <div class="nav-drop current"><button type="button">Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav-drop-panel"><a href="phase-1-about-me.html"><span class="num" style="background:#FF4759">1</span>About Me</a>
+<a href="phase-2-master-cv.html"><span class="num" style="background:#4F5BFF">2</span>Master CV</a>
+<a href="phase-3-claude-setup.html"><span class="num" style="background:#FFB400">3</span>Claude Setup</a>
+<a href="phase-4-generate.html"><span class="num" style="background:#00C2A8">4</span>Generate</a></div></div>
+      <a href="portfolio.html" class="">Portfolio</a>
+      <a href="maintenance.html" class="">Maintenance</a>
+      <a href="tips.html" class="">Tips</a>
+    </nav>
+    <div class="header-actions">
+      <div class="global-progress" data-global-progress title="Checklist progress across the whole guide">
+        <svg class="ring" viewBox="0 0 16 16"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
+        <span class="gp-text">0 / 17 steps</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="">🏠 Home</a>
+    <div class="sub-label">Guide</div>
+    <a href="phase-1-about-me.html" class="sub ">1. About Me</a>
+    <a href="phase-2-master-cv.html" class="sub ">2. Master CV</a>
+    <a href="phase-3-claude-setup.html" class="sub ">3. Claude Setup</a>
+    <a href="phase-4-generate.html" class="sub current">4. Generate</a>
+    <hr>
+    <a href="portfolio.html" class="">🐙 Portfolio</a>
+    <a href="maintenance.html" class="">🔁 Maintenance</a>
+    <a href="tips.html" class="">💡 Tips</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="page-hero container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Guide</span><span class="sep">/</span><span>Phase 4</span></div>
+  </div>
+  <div class="container">
+    <div class="stepper">
+  <a href="phase-1-about-me.html" class="stepper-pill " data-phase="1" style="--accent:#FF4759"><span class="num">1</span>About Me</a>
+  <a href="phase-2-master-cv.html" class="stepper-pill " data-phase="2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</a>
+  <a href="phase-3-claude-setup.html" class="stepper-pill " data-phase="3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</a>
+  <a href="phase-4-generate.html" class="stepper-pill active" data-phase="4" style="--accent:#00C2A8"><span class="num">4</span>Generate</a>
+</div>
+    <div class="guide-layout">
+      <nav class="rail" aria-label="Guide sections">
+  <ol class="rail-list">
+    <li><a href="phase-1-about-me.html" class="" data-phase="1"><span class="num">1</span>About Me</a></li>
+    <li><a href="phase-2-master-cv.html" class="" data-phase="2"><span class="num">2</span>Master CV</a></li>
+    <li><a href="phase-3-claude-setup.html" class="" data-phase="3"><span class="num">3</span>Claude Setup</a></li>
+    <li><a href="phase-4-generate.html" class="active" data-phase="4"><span class="num">4</span>Generate</a></li>
+  </ol>
+  <div class="rail-divider"></div>
+  <ol class="rail-list rail-bonus">
+    <li><a href="portfolio.html" class=""><span class="num">🐙</span>Portfolio</a></li>
+    <li><a href="maintenance.html" class=""><span class="num">🔁</span>Maintenance</a></li>
+    <li><a href="tips.html" class=""><span class="num">💡</span>Pro tips</a></li>
+  </ol>
+</nav>
+      <section class="phase" style="--accent:#00C2A8;--accent-text:#00876F">
+        <div class="phase-head">
+          <div class="phase-num" style="background:var(--accent)">P4</div>
+          <div><span class="eyebrow">Phase 4 &middot; Generate</span><h1>Turn it into real documents</h1></div>
+        </div>
+        <p class="phase-intro">Open your Claude Project and start asking. The more context you give &mdash; a job description, a word limit, a target audience &mdash; the sharper the result. Tap any card below to open it, read the prompt, and copy it straight into Claude.</p>
+
+        <div class="prompt-grid">
+<details class="prompt-card">
+  <summary><span class="prompt-icon">📋</span>Tailored CV<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-cv"><span class="label">Copy</span></button></div>
+      <pre id="pr-cv">Create a tailored CV for a [Job Title] role at [Company Name].
+
+The job description is:
+[Paste the full job description here]
+
+Use my uploaded documents as the source of truth. Prioritise skills and experience most relevant to this role. Format it cleanly for ATS systems.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">✉️</span>Cover letter<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-cl"><span class="label">Copy</span></button></div>
+      <pre id="pr-cl">Write a professional cover letter for a [Job Title] position at [Organisation Name].
+
+The role requires: [paste key requirements or full job description]
+
+Keep it under one page. Open with a strong hook, connect my experience to their needs, and close with a clear call to action.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">💼</span>LinkedIn summary<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-li"><span class="label">Copy</span></button></div>
+      <pre id="pr-li">Write a professional LinkedIn About section for me, optimised for a career in [target role or industry].
+
+Keep it under 300 words. Use a first-person voice, make it keyword-rich for recruiters, and let my genuine personality come through.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">🛠️</span>GitHub README<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-gh"><span class="label">Copy</span></button></div>
+      <pre id="pr-gh">Generate a professional GitHub profile README based on my uploaded documents.
+
+Include: a personal intro, my tech stack, current learning projects, this year's roadmap, and contact or social links. Format it in clean markdown.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">🪪</span>Short bio<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-sb"><span class="label">Copy</span></button></div>
+      <pre id="pr-sb">Write a 100-word professional bio suitable for a [conference speaker profile / award submission / portfolio website / publication].
+
+Keep the tone warm and professional. Write in third person.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">📖</span>Long bio<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-lb"><span class="label">Copy</span></button></div>
+      <pre id="pr-lb">Write a 350-word professional bio for my personal website.
+
+Write in first person. Cover my background, what I do, what drives me, key achievements, and where I am headed. Keep it engaging and human.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">🎓</span>Scholarship essay<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-sch"><span class="label">Copy</span></button></div>
+      <pre id="pr-sch">Draft a [word count]-word scholarship essay for the [Name of Scholarship or Grant].
+
+The application prompt is:
+[Paste the exact question or prompt here]
+
+Draw only from my uploaded documents. Use a clear narrative arc: background, motivation, goals, and intended impact.</pre>
+    </div>
+  </div>
+</details>
+
+<details class="prompt-card">
+  <summary><span class="prompt-icon">🔁</span>Career pivot summary<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="prompt-body">
+    <div class="code-block">
+      <div class="code-head"><span class="code-label">Prompt</span><button class="copy-btn" data-target="#pr-piv"><span class="label">Copy</span></button></div>
+      <pre id="pr-piv">Rewrite my professional summary for a pivot into [new industry or role].
+
+Keep it under 80 words. Make it forward-facing, confident, and grounded in my actual transferable skills and experience.</pre>
+    </div>
+  </div>
+</details>
+        </div>
+
+        <div class="phase-pager">
+<a class="pager-link prev" href="phase-3-claude-setup.html"><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span><span class="pager-meta">Back</span><span class="pager-title">Claude Setup</span></span></a>
+<a class="pager-link next" href="portfolio.html"><span><span class="pager-meta">Next</span><span class="pager-title">Portfolio</span></span><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+      </section>
+    </div>
+  </div>
+
+</main>
+<footer class="site">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+      <p>A free, step-by-step system for turning your real career history into a living knowledge base &mdash; then generating accurate CVs, cover letters, bios and more on demand.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Guide</h5>
+        <a href="phase-1-about-me.html">1. About Me</a>
+        <a href="phase-2-master-cv.html">2. Master CV</a>
+        <a href="phase-3-claude-setup.html">3. Claude Setup</a>
+        <a href="phase-4-generate.html">4. Generate</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="portfolio.html">GitHub Pages Portfolio</a>
+        <a href="maintenance.html">Keep it current</a>
+        <a href="tips.html">Pro tips</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tools used</h5>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM ↗</a>
+        <a href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi</p>
+    <p>Your checklist progress is saved privately in this browser only &mdash; nothing is uploaded anywhere.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="js/app.js"></script>
+<script src="js/checklist.js"></script>
+
+</body>
+</html>

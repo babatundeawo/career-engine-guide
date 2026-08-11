@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Phase 2 · Build Your Master CV — AI Career Engine</title>
+<meta name="description" content="Step-by-step: write the complete, unfiltered career record that powers every document Claude will generate for you.">
+<meta name="theme-color" content="#FFFFFF" id="themeColorMeta">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/guide.css">
+
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site">
+  <div class="container header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+    <nav class="main">
+      <a href="index.html" class="">Home</a>
+      <div class="nav-drop current"><button type="button">Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav-drop-panel"><a href="phase-1-about-me.html"><span class="num" style="background:#FF4759">1</span>About Me</a>
+<a href="phase-2-master-cv.html"><span class="num" style="background:#4F5BFF">2</span>Master CV</a>
+<a href="phase-3-claude-setup.html"><span class="num" style="background:#FFB400">3</span>Claude Setup</a>
+<a href="phase-4-generate.html"><span class="num" style="background:#00C2A8">4</span>Generate</a></div></div>
+      <a href="portfolio.html" class="">Portfolio</a>
+      <a href="maintenance.html" class="">Maintenance</a>
+      <a href="tips.html" class="">Tips</a>
+    </nav>
+    <div class="header-actions">
+      <div class="global-progress" data-global-progress title="Checklist progress across the whole guide">
+        <svg class="ring" viewBox="0 0 16 16"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
+        <span class="gp-text">0 / 17 steps</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="">🏠 Home</a>
+    <div class="sub-label">Guide</div>
+    <a href="phase-1-about-me.html" class="sub ">1. About Me</a>
+    <a href="phase-2-master-cv.html" class="sub current">2. Master CV</a>
+    <a href="phase-3-claude-setup.html" class="sub ">3. Claude Setup</a>
+    <a href="phase-4-generate.html" class="sub ">4. Generate</a>
+    <hr>
+    <a href="portfolio.html" class="">🐙 Portfolio</a>
+    <a href="maintenance.html" class="">🔁 Maintenance</a>
+    <a href="tips.html" class="">💡 Tips</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="page-hero container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Guide</span><span class="sep">/</span><span>Phase 2</span></div>
+  </div>
+  <div class="container">
+    <div class="stepper">
+  <a href="phase-1-about-me.html" class="stepper-pill " data-phase="1" style="--accent:#FF4759"><span class="num">1</span>About Me</a>
+  <a href="phase-2-master-cv.html" class="stepper-pill active" data-phase="2" style="--accent:#4F5BFF"><span class="num">2</span>Master CV</a>
+  <a href="phase-3-claude-setup.html" class="stepper-pill " data-phase="3" style="--accent:#FFB400"><span class="num">3</span>Claude Setup</a>
+  <a href="phase-4-generate.html" class="stepper-pill " data-phase="4" style="--accent:#00C2A8"><span class="num">4</span>Generate</a>
+</div>
+    <div class="guide-layout">
+      <nav class="rail" aria-label="Guide sections">
+  <ol class="rail-list">
+    <li><a href="phase-1-about-me.html" class="" data-phase="1"><span class="num">1</span>About Me</a></li>
+    <li><a href="phase-2-master-cv.html" class="active" data-phase="2"><span class="num">2</span>Master CV</a></li>
+    <li><a href="phase-3-claude-setup.html" class="" data-phase="3"><span class="num">3</span>Claude Setup</a></li>
+    <li><a href="phase-4-generate.html" class="" data-phase="4"><span class="num">4</span>Generate</a></li>
+  </ol>
+  <div class="rail-divider"></div>
+  <ol class="rail-list rail-bonus">
+    <li><a href="portfolio.html" class=""><span class="num">🐙</span>Portfolio</a></li>
+    <li><a href="maintenance.html" class=""><span class="num">🔁</span>Maintenance</a></li>
+    <li><a href="tips.html" class=""><span class="num">💡</span>Pro tips</a></li>
+  </ol>
+</nav>
+      <section class="phase" style="--accent:#4F5BFF;--accent-text:#3540D6">
+        <div class="phase-head">
+          <div class="phase-num" style="background:var(--accent)">P2</div>
+          <div><span class="eyebrow">Phase 2 &middot; Word or Docs</span><h1>Build your Master CV</h1></div>
+          <span class="phase-progress" data-phase-progress="2">0 / 4 done</span>
+        </div>
+        <p class="phase-intro">This is your complete, unedited career record &mdash; not a targeted CV. Length doesn't matter here. Completeness does.</p>
+
+        <div class="step-list">
+          <label class="step">
+            <input type="checkbox" data-phase="2" data-id="p2s1">
+            <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+            <span class="step-content"><div class="step-title">Open a blank document</div><div class="step-body">Start fresh in Microsoft Word or Google Docs.</div></span>
+          </label>
+          <label class="step">
+            <input type="checkbox" data-phase="2" data-id="p2s2">
+            <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+            <span class="step-content">
+              <div class="step-title">Add these sections</div>
+              <div class="step-body">
+                <ul class="step-list-inline">
+                  <li>Full name &amp; contact information</li>
+                  <li>Professional summary</li>
+                  <li>Core skills</li>
+                  <li>Work experience (every role, with dates)</li>
+                  <li>Education &amp; qualifications</li>
+                  <li>Certifications &amp; training</li>
+                  <li>Projects &amp; achievements</li>
+                  <li>Publications and volunteer work (if any)</li>
+                </ul>
+              </div>
+            </span>
+          </label>
+          <label class="step">
+            <input type="checkbox" data-phase="2" data-id="p2s3">
+            <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+            <span class="step-content"><div class="step-title">Fill it in &mdash; don't hold back</div><div class="step-body">Include everything. Claude will choose what's relevant later &mdash; your job right now is just to get it all down.</div></span>
+          </label>
+          <label class="step">
+            <input type="checkbox" data-phase="2" data-id="p2s4">
+            <span class="step-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+            <span class="step-content"><div class="step-title">Save the file</div><div class="step-body">Save it as <code>Master_CV.docx</code>. You now have both files ready.</div></span>
+          </label>
+        </div>
+
+        <div class="tip-grid" style="margin-top:8px;">
+          <div class="tip-card"><span class="tip-emoji">📅</span><h4>Dates over descriptions</h4><p>Precise start/end dates for every role matter more than polished prose here &mdash; Claude can rewrite the prose later, but it can't invent a date.</p></div>
+          <div class="tip-card"><span class="tip-emoji">🧮</span><h4>Quantify where you can</h4><p>Numbers &mdash; team size, budget, percentage improvement &mdash; give every future document something concrete to point to.</p></div>
+        </div>
+
+        <div class="phase-pager">
+<a class="pager-link prev" href="phase-1-about-me.html"><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span><span class="pager-meta">Back</span><span class="pager-title">About Me</span></span></a>
+<a class="pager-link next" href="phase-3-claude-setup.html"><span><span class="pager-meta">Next</span><span class="pager-title">Claude Setup</span></span><svg class="pager-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+      </section>
+    </div>
+  </div>
+
+</main>
+<footer class="site">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+      <p>A free, step-by-step system for turning your real career history into a living knowledge base &mdash; then generating accurate CVs, cover letters, bios and more on demand.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Guide</h5>
+        <a href="phase-1-about-me.html">1. About Me</a>
+        <a href="phase-2-master-cv.html">2. Master CV</a>
+        <a href="phase-3-claude-setup.html">3. Claude Setup</a>
+        <a href="phase-4-generate.html">4. Generate</a>
+      </div>
+      <div class="footer-col">
+        <h5>More</h5>
+        <a href="portfolio.html">GitHub Pages Portfolio</a>
+        <a href="maintenance.html">Keep it current</a>
+        <a href="tips.html">Pro tips</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tools used</h5>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM ↗</a>
+        <a href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi</p>
+    <p>Your checklist progress is saved privately in this browser only &mdash; nothing is uploaded anywhere.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="js/app.js"></script>
+<script src="js/checklist.js"></script>
+
+</body>
+</html>
