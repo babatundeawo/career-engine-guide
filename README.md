@@ -4,6 +4,8 @@
 
 A plain static site (HTML/CSS/vanilla JS, no build tools, no framework) built to run as-is on GitHub Pages.
 
+**Live:** https://babatundeawo.github.io/career-engine-guide/
+
 ## What this is
 
 A structured walkthrough that takes someone from "I have a messy folder of old CVs and certificates" to "I have a working Claude Project that generates accurate, personalised career documents on demand." It's the same underlying method used to build and maintain the CV/portfolio workflow in this account's own projects.
