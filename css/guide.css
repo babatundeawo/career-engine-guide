@@ -3,11 +3,11 @@
 
 /* Mobile / tablet pill stepper — primary phase nav on phones. Links between pages. */
 .stepper{
-  display:flex;gap:8px;overflow-x:auto;padding:12px 18px;min-width:0;
+  display:flex;gap:8px;overflow-x:auto;padding:12px 20px;min-width:0;
   position:sticky;top:var(--header-h);z-index:80;
   background:color-mix(in srgb, var(--bg) 94%, transparent);backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line);scrollbar-width:none;-webkit-overflow-scrolling:touch;
-  margin:0 -18px 28px;
+  margin:0 -20px 28px;
 }
 .stepper::-webkit-scrollbar{display:none;}
 .stepper-pill{
