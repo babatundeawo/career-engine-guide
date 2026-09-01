@@ -174,14 +174,14 @@ nav.main{display:none;}
 @media(min-width:1024px){ .section{padding:72px 0;} }
 
 /* ============ PAGE HERO (used by inner pages) ============ */
-.page-hero{padding:26px 0 30px;}
+.page-hero{padding-top:26px;padding-bottom:30px;}
 .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;margin-bottom:14px;}
 .breadcrumb a{text-decoration:none;color:var(--ink-faint);}
 .breadcrumb a:hover{color:var(--indigo-text);}
 .breadcrumb .sep{opacity:.5;}
 .page-hero h1{font-size:clamp(26px,7vw,44px);font-weight:700;}
 .page-hero .lead{margin-top:12px;font-size:15.5px;color:var(--ink-soft);max-width:600px;}
-@media(min-width:760px){ .page-hero{padding:40px 0 36px;} }
+@media(min-width:760px){ .page-hero{padding-top:40px;padding-bottom:36px;} }
 
 /* ============ STEP LIST (shared by all guide-style pages) ============ */
 .step-list{display:flex;flex-direction:column;gap:12px;}
