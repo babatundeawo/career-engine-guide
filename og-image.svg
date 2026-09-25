@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15132B"/>
+      <stop offset="1" stop-color="#1B1A2E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF4759"/>
+      <stop offset="0.4" stop-color="#4F5BFF"/>
+      <stop offset="0.7" stop-color="#FFB400"/>
+      <stop offset="1" stop-color="#00C2A8"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.15" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#4F5BFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4F5BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.9" cy="0.85" r="0.6">
+      <stop offset="0" stop-color="#00C2A8" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#00C2A8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accent)"/>
+  <g>
+    <rect x="90" y="86" width="76" height="76" rx="20" fill="url(#accent)"/>
+    <text x="128" y="140" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif" font-size="38" text-anchor="middle">⚙️</text>
+  </g>
+  <text x="90" y="290" font-family="'Space Grotesk', Arial, sans-serif" font-size="66" font-weight="700" fill="#F4F3FB">Build your personal</text>
+  <text x="90" y="366" font-family="'Space Grotesk', Arial, sans-serif" font-size="66" font-weight="700" fill="#4F5BFF">AI career engine</text>
+  <text x="90" y="426" font-family="Arial, sans-serif" font-size="26" fill="#B3B1CE">A free, step-by-step guide &#183; NotebookLM + Claude</text>
+  <g font-family="'JetBrains Mono', monospace" font-size="20" fill="#9492AE">
+    <text x="90" y="500">01 About Me</text>
+    <text x="290" y="500">02 Master CV</text>
+    <text x="500" y="500">03 Claude Setup</text>
+    <text x="740" y="500">04 Generate</text>
+  </g>
+</svg>

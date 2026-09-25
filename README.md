@@ -4,6 +4,8 @@
 
 A plain static site (HTML/CSS/vanilla JS, no build tools, no framework) built to run as-is on GitHub Pages.
 
+**Design system:** premium light/dark theme with a cursor-tracked spotlight on cards, scroll-reveal animations, an animated gradient hero, a glassy blurred header/nav, and a shine-sweep on primary buttons — all built with plain CSS custom properties and vanilla JS (`IntersectionObserver`, the View Transitions API where supported), no dependencies added. Also includes `robots.txt`, `sitemap.xml`, Open Graph/Twitter card meta on every page, a branded `og-image.svg`, and a matching `404.html`.
+
 **Live:** https://babatundeawo.github.io/career-engine-guide/
 
 ## What this is
