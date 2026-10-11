@@ -1,0 +1,75 @@
+name: Build and deploy
+
+# Every push to main publishes the site to GitHub Pages.
+# Pull requests run the same checks but never publish anything.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site into _site
+        run: |
+          mkdir _site
+          cp -r *.html css js assets favicon.ico site.webmanifest robots.txt sitemap.xml .nojekyll _site/
+
+      - name: Check pages, links and metadata
+        run: python3 .github/scripts/check_site.py _site
+
+      - name: Check external links (report only)
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true
+        with:
+          args: --no-progress --accept 200,206,403,429 --exclude 'fonts\.(googleapis|gstatic)\.com' --exclude-path _site/404.html '_site/**/*.html'
+          fail: false
+
+      - name: Lighthouse report (report only)
+        uses: treosh/lighthouse-ci-action@v12
+        continue-on-error: true
+        with:
+          configPath: .github/lighthouserc.json
+          uploadArtifacts: true
+
+      - name: Upload site as a downloadable artifact (pull requests)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site
+          retention-days: 7
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,54 +1,75 @@
-# Career Engine Guide
+<div align="center">
 
-> A free, step-by-step guide to building a personal **AI career engine** with NotebookLM and Claude — generate CVs, cover letters, bios, and more from your own real history, not generic templates.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+  <img src="docs/assets/logo-light.svg" alt="Career Engine" width="300">
+</picture>
 
-A plain static site (HTML/CSS/vanilla JS, no build tools, no framework) built to run as-is on GitHub Pages.
+**A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude.**
 
-**Design system:** premium light/dark theme with a cursor-tracked spotlight on cards, scroll-reveal animations, an animated gradient hero, a glassy blurred header/nav, and a shine-sweep on primary buttons — all built with plain CSS custom properties and vanilla JS (`IntersectionObserver`, the View Transitions API where supported), no dependencies added. Also includes `robots.txt`, `sitemap.xml`, Open Graph/Twitter card meta on every page, a branded `og-image.svg`, and a matching `404.html`.
+[![Deploy](https://github.com/babatundeawo/career-engine-guide/actions/workflows/deploy.yml/badge.svg)](https://github.com/babatundeawo/career-engine-guide/actions/workflows/deploy.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fbabatundeawo.github.io%2Fcareer-engine-guide%2F&label=live%20site)](https://babatundeawo.github.io/career-engine-guide/)
 
-**Live:** https://babatundeawo.github.io/career-engine-guide/
+[Live site](https://babatundeawo.github.io/career-engine-guide/) · [Start the guide](https://babatundeawo.github.io/career-engine-guide/phase-1-about-me.html) · [Report an issue](https://github.com/babatundeawo/career-engine-guide/issues/new/choose)
 
-## What this is
+</div>
 
-A structured walkthrough that takes someone from "I have a messy folder of old CVs and certificates" to "I have a working Claude Project that generates accurate, personalised career documents on demand." It's the same underlying method used to build and maintain the CV/portfolio workflow in this account's own projects.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/preview-dark.png">
+  <img src="docs/assets/preview-light.png" alt="The Career Engine home page: a headline reading 'Build your personal AI career engine', two buttons, and a diagram of four connected phases.">
+</picture>
 
-## What's in this build
+## About
+
+Career Engine walks you from a messy folder of old CVs and certificates to a working Claude Project that writes accurate, personalised career documents on demand. It is for anyone who applies for jobs, grants, scholarships or speaking slots and is tired of starting from a blank page. Every document is generated from your own verified history, so nothing is invented.
+
+## Features
+
+- Four short phases that take about 30 minutes in total
+- A saved checklist that remembers your progress in your own browser
+- Eight ready-to-copy prompts: tailored CV, cover letter, LinkedIn summary, GitHub README, short and long bio, scholarship essay, career pivot summary
+- A bonus guide for publishing a portfolio on GitHub Pages
+- A quick reference for which file to update when your career changes
+- Light and dark themes that follow your system setting
+- Works on phones, tablets and desktops, and is usable without JavaScript
+
+## How to use it
+
+1. Open the [live site](https://babatundeawo.github.io/career-engine-guide/) and choose **Start the guide**.
+2. **About Me**: use NotebookLM to draft a grounded first-person introduction.
+3. **Master CV**: write the complete, uncut record of your career.
+4. **Claude Setup**: upload both files to a Claude Project and paste in the system prompt.
+5. **Generate**: copy any prompt, paste it into your project, and get a tailored document.
+
+Tick each step as you go. Progress is stored only in your browser and is never uploaded.
+
+## Tech stack
+
+Plain HTML, CSS and vanilla JavaScript with no framework and no build step. Fonts are served by Google Fonts. Hosted on GitHub Pages and deployed by GitHub Actions.
+
+## Project structure
 
 ```
-career-engine-guide/
-├── index.html                    Home — overview of the 4-phase method
-├── phase-1-about-me.html          Phase 1 — build an "About Me" source document
-├── phase-2-master-cv.html         Phase 2 — build a Master CV (everything, no editing down)
-├── phase-3-claude-setup.html      Phase 3 — set up a Claude Project with the source documents
-├── phase-4-generate.html          Phase 4 — generate tailored career documents from the Project
-├── portfolio.html                 Bonus — build & publish a portfolio webpage on GitHub Pages
-├── tips.html                      Pro tips for sharper, more accurate output
-├── maintenance.html               Keeping the knowledge base current over time
-└── css/, js/                      Shared styles and page interactions
+.
+├── index.html, phase-*.html, portfolio.html,
+│   maintenance.html, tips.html, 404.html   Pages
+├── css/        Design tokens and styles (base, home, guide)
+├── js/         Theme, page behaviour and checklist scripts
+├── assets/     Icons, favicon set and social preview image
+├── docs/       Guides for maintaining the site
+└── .github/    Workflows, issue templates and security automation
 ```
 
-## The method, in short
+## Contributing
 
-1. **About Me** — write a single honest source document covering background, work history, and voice.
-2. **Master CV** — an exhaustive, uncut CV with every job, project, and credential (the source of truth, not the output).
-3. **Claude Project setup** — load both documents (plus certificates, references, past applications) into a Claude Project as project knowledge.
-4. **Generate** — ask for tailored CVs, cover letters, or statements; Claude pulls from the real source material instead of inventing generic filler.
+Spotted a typo or have an idea? [Open an issue](https://github.com/babatundeawo/career-engine-guide/issues/new/choose) or edit a file on GitHub and propose the change as a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The bonus **portfolio** phase covers turning the same material into a public GitHub Pages site, and **maintenance** covers keeping the knowledge base accurate as your career changes (new jobs, corrected dates, dropped plans).
+## Security
 
-## Run locally
+Please report vulnerabilities privately. See [SECURITY.md](SECURITY.md).
 
-No build step required — open `index.html` directly in a browser, or serve the folder:
+## Credits
 
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
-```
+Fonts: [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque), [Inter](https://fonts.google.com/specimen/Inter), [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono), all under the SIL Open Font License. Icons and logo are original artwork for this project.
 
-## Deploy to GitHub Pages
-
-1. Push this repo to GitHub.
-2. In **Settings → Pages**, set the source to the `main` branch (root).
-3. The guide will be live at `https://<your-username>.github.io/career-engine-guide/`.
-
-No build configuration needed — it's plain static HTML/CSS/JS throughout.
+Maintained by [Babatunde Awoyemi](https://github.com/babatundeawo). Guides for maintainers are in [`docs/`](docs/DEPLOYMENT.md).

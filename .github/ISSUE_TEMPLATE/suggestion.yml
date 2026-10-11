@@ -1,0 +1,11 @@
+name: Suggestion
+description: An idea to improve the guide
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would make the guide clearer or more useful?
+    validations:
+      required: true
