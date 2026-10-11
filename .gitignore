@@ -1,4 +1,11 @@
+# Operating system and editor files
 .DS_Store
 Thumbs.db
-*.log
 .vscode/
+.idea/
+
+# Logs and local build output
+*.log
+_site/
+node_modules/
+.lighthouseci/

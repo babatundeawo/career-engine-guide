@@ -1,135 +1,137 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Build Your Personal AI Career Engine — Step-by-Step Guide</title>
 <meta name="description" content="A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.">
-<meta name="theme-color" content="#FFFFFF" id="themeColorMeta">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://babatundeawo.github.io/career-engine-guide/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAFAFC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0A18" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<script src="js/theme-init.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://babatundeawo.github.io/career-engine-guide/">
-<meta name="color-scheme" content="light dark">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234F5BFF'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400..700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Career Engine">
+<meta property="og:locale" content="en">
 <meta property="og:title" content="Build Your Personal AI Career Engine — Step-by-Step Guide">
 <meta property="og:description" content="A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.">
 <meta property="og:url" content="https://babatundeawo.github.io/career-engine-guide/">
-<meta property="og:image" content="https://babatundeawo.github.io/career-engine-guide/og-image.svg">
+<meta property="og:image" content="https://babatundeawo.github.io/career-engine-guide/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Career Engine: a free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Build Your Personal AI Career Engine — Step-by-Step Guide">
 <meta name="twitter:description" content="A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.">
-<meta name="twitter:image" content="https://babatundeawo.github.io/career-engine-guide/og-image.svg">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/home.css">
-
+<meta name="twitter:image" content="https://babatundeawo.github.io/career-engine-guide/assets/og-image.png">
+<meta name="twitter:image:alt" content="Career Engine: a free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Career Engine", "url": "https://babatundeawo.github.io/career-engine-guide/", "description": "A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude — generate CVs, cover letters, bios and more from your own real history.", "inLanguage": "en", "author": {"@type": "Person", "name": "Babatunde Awoyemi"}}</script>
 </head>
 <body>
-<a class="skip-link" href="#top">Skip to content</a>
-<div class="grain" aria-hidden="true"></div>
-<div class="scroll-progress" id="scrollProgress"></div>
+<noscript><p class="noscript-note">Checklist progress and the copy buttons need JavaScript. Everything else works without it.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="site">
   <div class="container header-inner">
-    <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
-    <nav class="main">
-      <a href="index.html" class="current">Home</a>
-      <div class="nav-drop "><button type="button">Guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav-drop-panel"><a href="phase-1-about-me.html"><span class="num" style="background:#FF4759">1</span>About Me</a>
-<a href="phase-2-master-cv.html"><span class="num" style="background:#4F5BFF">2</span>Master CV</a>
-<a href="phase-3-claude-setup.html"><span class="num" style="background:#FFB400">3</span>Claude Setup</a>
-<a href="phase-4-generate.html"><span class="num" style="background:#00C2A8">4</span>Generate</a></div></div>
-      <a href="portfolio.html" class="">Portfolio</a>
-      <a href="maintenance.html" class="">Maintenance</a>
-      <a href="tips.html" class="">Tips</a>
+    <a href="index.html" class="brand" aria-label="Career Engine, home"><img class="brand-mark" src="assets/favicon.svg" width="32" height="32" alt=""><span class="brand-text">Career Engine</span></a>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-toggle" aria-expanded="false" aria-controls="guideMenu">Guide <svg class="icon icon-s" aria-hidden="true"><use href="assets/icons.svg#i-chevron-down"/></svg></button>
+        <div class="nav-drop-panel" id="guideMenu"><a href="phase-1-about-me.html" class="ph-1"><span class="num">1</span>About Me</a><a href="phase-2-master-cv.html" class="ph-2"><span class="num">2</span>Master CV</a><a href="phase-3-claude-setup.html" class="ph-3"><span class="num">3</span>Claude Setup</a><a href="phase-4-generate.html" class="ph-4"><span class="num">4</span>Generate</a></div>
+      </div>
+      <a href="portfolio.html">Portfolio</a><a href="maintenance.html">Maintenance</a><a href="tips.html">Tips</a>
     </nav>
     <div class="header-actions">
       <div class="global-progress" data-global-progress title="Checklist progress across the whole guide">
-        <svg class="ring" viewBox="0 0 16 16"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
+        <svg class="ring" viewBox="0 0 16 16" aria-hidden="true"><circle class="track" cx="8" cy="8" r="5.5"/><circle class="fill" cx="8" cy="8" r="5.5" stroke-dasharray="34.5" stroke-dashoffset="34.5"/></svg>
         <span class="gp-text">0 / 17 steps</span>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="burger"></span>
-      </button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme" aria-pressed="false"><svg class="icon i-moon" aria-hidden="true"><use href="assets/icons.svg#i-moon"/></svg><svg class="icon i-sun" aria-hidden="true"><use href="assets/icons.svg#i-sun"/></svg></button>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger"></span></button>
     </div>
   </div>
-  <nav class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="current">🏠 Home</a>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="index.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-home"/></svg>Home</a>
     <div class="sub-label">Guide</div>
-    <a href="phase-1-about-me.html" class="sub ">1. About Me</a>
-    <a href="phase-2-master-cv.html" class="sub ">2. Master CV</a>
-    <a href="phase-3-claude-setup.html" class="sub ">3. Claude Setup</a>
-    <a href="phase-4-generate.html" class="sub ">4. Generate</a>
+    <a href="phase-1-about-me.html" class="sub ph-1"><span class="num">1</span>About Me</a><a href="phase-2-master-cv.html" class="sub ph-2"><span class="num">2</span>Master CV</a><a href="phase-3-claude-setup.html" class="sub ph-3"><span class="num">3</span>Claude Setup</a><a href="phase-4-generate.html" class="sub ph-4"><span class="num">4</span>Generate</a>
     <hr>
-    <a href="portfolio.html" class="">🐙 Portfolio</a>
-    <a href="maintenance.html" class="">🔁 Maintenance</a>
-    <a href="tips.html" class="">💡 Tips</a>
+    <a href="portfolio.html"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-window"/></svg>Portfolio</a><a href="maintenance.html"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-refresh"/></svg>Maintenance</a><a href="tips.html"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bulb"/></svg>Tips</a>
   </nav>
 </header>
 
-<main id="top">
-
+<main id="main" tabindex="-1">
   <section class="hero container">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow" style="color:var(--indigo-text)"><span class="dot"></span>Free &middot; No coding required</span>
+        <span class="chip"><span class="dot"></span>Free &middot; No coding required</span>
         <h1>Build your personal <span class="accentword">AI career engine</span></h1>
         <p class="lead">Turn your real history into one living knowledge base &mdash; then generate accurate, polished CVs, cover letters, bios and more, on demand, with NotebookLM and Claude.</p>
         <div class="hero-ctas">
-          <a href="phase-1-about-me.html" class="btn btn-primary">Start the guide &rarr;</a>
+          <a href="phase-1-about-me.html" class="btn btn-primary">Start the guide <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></a>
           <a href="phase-4-generate.html" class="btn btn-ghost">Browse sample prompts</a>
         </div>
-        <div class="hero-meta">
-          <span>🧠 NotebookLM</span>
-          <span>🤖 Claude</span>
-          <span>📄 Word / Docs</span>
-          <span>⏱️ ~30 minutes to set up</span>
-        </div>
+        <ul class="hero-meta">
+          <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-notebook"/></svg>NotebookLM</li>
+          <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chat"/></svg>Claude</li>
+          <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-doc"/></svg>Word / Docs</li>
+          <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-clock"/></svg>~30 minutes to set up</li>
+        </ul>
       </div>
-      <div class="hero-art" aria-hidden="true">
+      <figure class="hero-art" aria-hidden="true">
         <svg viewBox="0 0 600 260" fill="none">
-          <path class="path-draw" d="M20,210 C140,40 200,230 320,110 C420,15 480,190 580,55" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>
-          <path class="path-draw" d="M20,210 C140,40 200,230 320,110 C420,15 480,190 580,55" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 10" opacity="0.9"/>
+          <path d="M20,210 C140,40 200,230 320,110 C420,15 480,190 580,55" stroke="var(--line-strong)" stroke-width="3" stroke-linecap="round"/>
+          <path class="path-draw" d="M20,210 C140,40 200,230 320,110 C420,15 480,190 580,55" stroke="url(#heroGrad)" stroke-width="3" stroke-linecap="round"/>
           <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="600" y2="0">
-              <stop offset="0" stop-color="var(--coral)"/>
-              <stop offset="0.4" stop-color="var(--indigo)"/>
-              <stop offset="0.7" stop-color="var(--amber)"/>
-              <stop offset="1" stop-color="var(--teal)"/>
+            <linearGradient id="heroGrad" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="var(--p1-glow)"/>
+              <stop offset="0.4" stop-color="var(--p2-glow)"/>
+              <stop offset="0.7" stop-color="var(--p3-glow)"/>
+              <stop offset="1" stop-color="var(--p4-glow)"/>
             </linearGradient>
           </defs>
-          <g class="node-pop" style="animation-delay:.7s"><circle cx="20" cy="210" r="20" fill="var(--coral)"/><text x="20" y="215" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">1</text></g>
-          <g class="node-pop" style="animation-delay:.95s"><circle cx="222" cy="128" r="20" fill="var(--indigo)"/><text x="222" y="133" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">2</text></g>
-          <g class="node-pop" style="animation-delay:1.2s"><circle cx="382" cy="88" r="20" fill="var(--amber)"/><text x="382" y="93" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">3</text></g>
-          <g class="node-pop" style="animation-delay:1.45s"><circle cx="562" cy="50" r="20" fill="var(--teal)"/><text x="562" y="55" text-anchor="middle" font-family="Space Grotesk" font-size="15" font-weight="700" fill="#fff">4</text></g>
+          <g class="node-pop d7"><circle cx="20" cy="210" r="20" fill="var(--p1)"/><text x="20" y="216" text-anchor="middle" font-family="var(--font-display)" font-size="16" font-weight="700" fill="#fff">1</text></g>
+          <g class="node-pop d95"><circle cx="222" cy="128" r="20" fill="var(--p2)"/><text x="222" y="134" text-anchor="middle" font-family="var(--font-display)" font-size="16" font-weight="700" fill="#fff">2</text></g>
+          <g class="node-pop d12"><circle cx="382" cy="88" r="20" fill="var(--p3)"/><text x="382" y="94" text-anchor="middle" font-family="var(--font-display)" font-size="16" font-weight="700" fill="#fff">3</text></g>
+          <g class="node-pop d145"><circle cx="562" cy="50" r="20" fill="var(--p4)"/><text x="562" y="56" text-anchor="middle" font-family="var(--font-display)" font-size="16" font-weight="700" fill="#fff">4</text></g>
         </svg>
-      </div>
+        <figcaption><span>Phase 1</span><span>Phase 4</span></figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section" id="tools">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" style="color:var(--ink-faint)">What you'll need</span>
+      <div class="section-head reveal">
+        <span class="eyebrow">What you'll need</span>
         <h2>Three free tools. That's it.</h2>
         <p>No installs, no subscriptions, no code. Just three browser tabs.</p>
       </div>
       <div class="tool-grid">
-        <div class="tool-card spot" style="--accent:var(--coral);--accent-text:var(--coral-text)">
-          <div class="tool-icon">🧠</div><h3>NotebookLM</h3>
+        <div class="tool-card spot reveal ph-1">
+          <div class="tool-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-notebook"/></svg></div><h3>NotebookLM</h3>
           <p>Feeds on your real documents and writes your first &ldquo;About Me&rdquo; draft &mdash; grounded only in what you give it.</p>
           <span class="tool-cost">FREE</span>
         </div>
-        <div class="tool-card spot" style="--accent:var(--indigo);--accent-text:var(--indigo-text)">
-          <div class="tool-icon">🤖</div><h3>Claude</h3>
+        <div class="tool-card spot reveal ph-2">
+          <div class="tool-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-chat"/></svg></div><h3>Claude</h3>
           <p>Holds your knowledge base permanently in a Claude Project and generates every career document you'll ever need from it.</p>
           <span class="tool-cost">FREE</span>
         </div>
-        <div class="tool-card spot" style="--accent:var(--amber);--accent-text:var(--amber-text)">
-          <div class="tool-icon">📄</div><h3>Word or Docs</h3>
+        <div class="tool-card spot reveal ph-3">
+          <div class="tool-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-doc"/></svg></div><h3>Word or Docs</h3>
           <p>Where your Master CV lives &mdash; the full, unfiltered record of your career, kept up to date.</p>
           <span class="tool-cost">FREE</span>
         </div>
@@ -139,123 +141,138 @@
 
   <section class="section section-soft">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" style="color:var(--ink-faint)">The journey</span>
+      <div class="section-head reveal">
+        <span class="eyebrow">The journey</span>
         <h2>Four phases, one living system</h2>
-        <p>Each phase is its own page now &mdash; work through them in order, or jump straight to the one you need. Your checklist progress is saved automatically as you go.</p>
+        <p>Each phase is its own page &mdash; work through them in order, or jump straight to the one you need. Your checklist progress is saved automatically as you go.</p>
       </div>
       <div class="journey-preview">
-        <a class="jp-card spot" href="phase-1-about-me.html" style="--accent:#FF4759;--accent-text:#D62839">
-          <div class="jp-num" style="background:#FF4759">1</div>
+        <a class="jp-card spot reveal ph-1" href="phase-1-about-me.html">
+          <div class="jp-num" aria-hidden="true">1</div>
           <div class="jp-body">
             <span class="jp-eyebrow">NotebookLM</span>
             <h3>Build your About Me document</h3>
             <p>Feed NotebookLM your existing materials and let it draft a grounded first-person introduction.</p>
             <div class="jp-progress" data-phase-progress="1">0 / 4 done</div>
           </div>
-          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg class="jp-arrow icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg>
         </a>
-        <a class="jp-card spot" href="phase-2-master-cv.html" style="--accent:#4F5BFF;--accent-text:#3540D6">
-          <div class="jp-num" style="background:#4F5BFF">2</div>
+        <a class="jp-card spot reveal ph-2" href="phase-2-master-cv.html">
+          <div class="jp-num" aria-hidden="true">2</div>
           <div class="jp-body">
             <span class="jp-eyebrow">Word or Docs</span>
             <h3>Build your Master CV</h3>
             <p>Write the complete, unfiltered record of your career &mdash; every role, skill, and achievement.</p>
             <div class="jp-progress" data-phase-progress="2">0 / 4 done</div>
           </div>
-          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg class="jp-arrow icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg>
         </a>
-        <a class="jp-card spot" href="phase-3-claude-setup.html" style="--accent:#FFB400;--accent-text:#A66800">
-          <div class="jp-num" style="background:#FFB400">3</div>
+        <a class="jp-card spot reveal ph-3" href="phase-3-claude-setup.html">
+          <div class="jp-num" aria-hidden="true">3</div>
           <div class="jp-body">
             <span class="jp-eyebrow">Claude</span>
             <h3>Set up your Claude Project</h3>
             <p>Upload both files and paste in a system prompt that keeps every output honest and on-brand.</p>
             <div class="jp-progress" data-phase-progress="3">0 / 4 done</div>
           </div>
-          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg class="jp-arrow icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg>
         </a>
-        <a class="jp-card spot" href="phase-4-generate.html" style="--accent:#00C2A8;--accent-text:#00876F">
-          <div class="jp-num" style="background:#00C2A8">4</div>
+        <a class="jp-card spot reveal ph-4" href="phase-4-generate.html">
+          <div class="jp-num" aria-hidden="true">4</div>
           <div class="jp-body">
             <span class="jp-eyebrow">Generate</span>
             <h3>Turn it into real documents</h3>
             <p>Eight ready-to-copy prompts &mdash; tailored CVs, cover letters, bios, README files and more.</p>
           </div>
-          <svg class="jp-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg class="jp-arrow icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg>
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="statement" aria-label="The idea in one line">
+    <div class="container reveal">
+      <p>Write your story <em>once.</em> Use it everywhere.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow" style="color:var(--violet-text)">Beyond the core guide</span>
+      <div class="section-head reveal">
+        <span class="eyebrow">Beyond the core guide</span>
         <h2>Keep going once you're set up</h2>
       </div>
       <div class="teaser-grid">
-        <a class="teaser-card spot" href="portfolio.html">
-          <div class="teaser-icon">🐙</div>
+        <a class="teaser-card spot reveal" href="portfolio.html">
+          <div class="teaser-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-window"/></svg></div>
           <h3>Publish a portfolio</h3>
           <p>Put a simple site live on GitHub Pages, free, in about ten minutes.</p>
-          <span class="teaser-link">Read the guide &rarr;</span>
+          <span class="teaser-link">Read the guide <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></span>
         </a>
-        <a class="teaser-card spot" href="maintenance.html">
-          <div class="teaser-icon">🔁</div>
+        <a class="teaser-card spot reveal" href="maintenance.html">
+          <div class="teaser-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-refresh"/></svg></div>
           <h3>Keep it current</h3>
           <p>A quick reference for which file to update whenever life moves.</p>
-          <span class="teaser-link">See the table &rarr;</span>
+          <span class="teaser-link">See the table <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></span>
         </a>
-        <a class="teaser-card spot" href="tips.html">
-          <div class="teaser-icon">💡</div>
+        <a class="teaser-card spot reveal" href="tips.html">
+          <div class="teaser-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-bulb"/></svg></div>
           <h3>Pro tips</h3>
           <p>Small habits that make Claude's output sharper every time.</p>
-          <span class="teaser-link">Get sharper results &rarr;</span>
+          <span class="teaser-link">Get sharper results <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></span>
         </a>
       </div>
     </div>
   </section>
 
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2 id="cta-title">Ready to build yours?</h2>
+        <p>Four short phases, about thirty minutes, and a knowledge base you can reuse for every application.</p>
+        <a href="phase-1-about-me.html" class="btn">Start with Phase 1 <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="site">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <a href="index.html" class="brand"><span class="brand-mark">⚙️</span><span class="brand-text">Career Engine</span></a>
+      <a href="index.html" class="brand" aria-label="Career Engine, home"><img class="brand-mark" src="assets/favicon.svg" width="32" height="32" alt=""><span>Career Engine</span></a>
       <p>A free, step-by-step system for turning your real career history into a living knowledge base &mdash; then generating accurate CVs, cover letters, bios and more on demand.</p>
     </div>
     <div class="footer-cols">
       <div class="footer-col">
-        <h5>Guide</h5>
+        <h2>Guide</h2>
         <a href="phase-1-about-me.html">1. About Me</a>
         <a href="phase-2-master-cv.html">2. Master CV</a>
         <a href="phase-3-claude-setup.html">3. Claude Setup</a>
         <a href="phase-4-generate.html">4. Generate</a>
       </div>
       <div class="footer-col">
-        <h5>More</h5>
+        <h2>More</h2>
         <a href="portfolio.html">GitHub Pages Portfolio</a>
         <a href="maintenance.html">Keep it current</a>
         <a href="tips.html">Pro tips</a>
       </div>
       <div class="footer-col">
-        <h5>Tools used</h5>
-        <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM ↗</a>
-        <a href="https://claude.ai" target="_blank" rel="noopener">Claude ↗</a>
-        <a href="https://github.com" target="_blank" rel="noopener">GitHub Pages ↗</a>
+        <h2>Tools used</h2>
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer">NotebookLM<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-up-right"/></svg><span class="sr-note"> (opens in a new tab)</span></a>
+        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-up-right"/></svg><span class="sr-note"> (opens in a new tab)</span></a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Pages<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-up-right"/></svg><span class="sr-note"> (opens in a new tab)</span></a>
       </div>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi</p>
+    <p>Built with NotebookLM &amp; Claude &middot; Maintained by Babatunde Awoyemi &middot; <a href="https://github.com/babatundeawo/career-engine-guide" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
     <p>Your checklist progress is saved privately in this browser only &mdash; nothing is uploaded anywhere.</p>
   </div>
 </footer>
 
-<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#i-arrow-up"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/app.js"></script>
 <script src="js/checklist.js"></script>
-
 </body>
 </html>
