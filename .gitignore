@@ -9,3 +9,6 @@ Thumbs.db
 _site/
 node_modules/
 .lighthouseci/
+
+# Font packages downloaded during the build
+.fontcache/

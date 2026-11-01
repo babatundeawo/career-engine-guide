@@ -30,8 +30,10 @@ Career Engine walks you from a messy folder of old CVs and certificates to a wor
 - Eight ready-to-copy prompts: tailored CV, cover letter, LinkedIn summary, GitHub README, short and long bio, scholarship essay, career pivot summary
 - A bonus guide for publishing a portfolio on GitHub Pages
 - A quick reference for which file to update when your career changes
+- Installs like an app on Android, iPhone and desktop, and keeps working offline for pages you have opened
+- A "Continue where you left off" link that takes you back to your last phase
 - Light and dark themes that follow your system setting
-- Works on phones, tablets and desktops, and is usable without JavaScript
+- Works on phones, tablets and desktops, and is readable without JavaScript
 
 ## How to use it
 
@@ -43,9 +45,11 @@ Career Engine walks you from a messy folder of old CVs and certificates to a wor
 
 Tick each step as you go. Progress is stored only in your browser and is never uploaded.
 
+**Install it:** on Android or desktop Chrome and Edge, choose **Install the app** in the footer or the browser's install button. On iPhone or iPad, open the site in Safari, tap **Share**, then **Add to Home Screen**.
+
 ## Tech stack
 
-Plain HTML, CSS and vanilla JavaScript with no framework and no build step. Fonts are served by Google Fonts. Hosted on GitHub Pages and deployed by GitHub Actions.
+Plain HTML, CSS and vanilla JavaScript with no framework. A small Python script assembles the site in GitHub Actions, stamps the service worker and self-hosts the fonts, and the result is published to GitHub Pages. No third-party requests are made when you visit.
 
 ## Project structure
 
@@ -53,8 +57,9 @@ Plain HTML, CSS and vanilla JavaScript with no framework and no build step. Font
 .
 ├── index.html, phase-*.html, portfolio.html,
 │   maintenance.html, tips.html, 404.html   Pages
+├── offline.html, sw.js, site.webmanifest   Offline page, service worker, app manifest
 ├── css/        Design tokens and styles (base, home, guide)
-├── js/         Theme, page behaviour and checklist scripts
+├── js/         Theme, page behaviour, checklist and install scripts
 ├── assets/     Icons, favicon set and social preview image
 ├── docs/       Guides for maintaining the site
 └── .github/    Workflows, issue templates and security automation
@@ -70,6 +75,6 @@ Please report vulnerabilities privately. See [SECURITY.md](SECURITY.md).
 
 ## Credits
 
-Fonts: [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque), [Inter](https://fonts.google.com/specimen/Inter), [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono), all under the SIL Open Font License. Icons and logo are original artwork for this project.
+Fonts, self-hosted via [Fontsource](https://fontsource.org): [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque), [Inter](https://fonts.google.com/specimen/Inter) and [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif), all under the SIL Open Font License. Icons and logo are original artwork for this project.
 
 Maintained by [Babatunde Awoyemi](https://github.com/babatundeawo). Guides for maintainers are in [`docs/`](docs/DEPLOYMENT.md).

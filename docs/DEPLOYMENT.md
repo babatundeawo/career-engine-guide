@@ -24,6 +24,16 @@ If it failed, open the red step and read the line starting with `-`. It names th
 
 The Lighthouse and external-link steps only report. A warning there never blocks publishing.
 
+## What the build does
+
+The workflow runs a small script (`.github/scripts/build.py`) that assembles the site, downloads and self-hosts the fonts, works out the correct web address from the repository name, and stamps the service worker with a new version. A second script checks every page, link, icon, the app manifest and the service worker. You never run either by hand.
+
+If the font download fails, the deploy still succeeds and the site shows system fonts. Re-run the workflow from **Actions > Build and deploy > Run workflow** to retry.
+
+## How visitors get updates
+
+The site works offline, so a visitor's browser keeps a saved copy. When you deploy a change, returning visitors see an **Update available** message with a **Refresh** button. They are never switched to the new version in the middle of reading.
+
 ## Review a pull request before it goes live
 
 1. Open the **Pull requests** tab and click the request.
@@ -45,7 +55,7 @@ GitHub Pages cannot host a separate preview address, so the downloadable preview
 1. **Settings > Pages > Custom domain**: enter your domain and save.
 2. At your domain provider add the DNS records GitHub lists on that page.
 3. Tick **Enforce HTTPS** once it becomes available.
-4. Follow the "custom domain" note in [CUSTOMIZING.md](CUSTOMIZING.md).
+4. Add a `CNAME` file as described in [CUSTOMIZING.md](CUSTOMIZING.md). The build then updates every address automatically.
 
 ## Turn on secret scanning (recommended)
 

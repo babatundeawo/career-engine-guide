@@ -1,16 +1,30 @@
 {
+  "id": "./",
   "name": "Career Engine Guide",
   "short_name": "Career Engine",
   "description": "A free, step-by-step guide to building a personal AI career engine with NotebookLM and Claude.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
   "background_color": "#FAFAFC",
   "theme_color": "#3B3BD8",
+  "categories": ["education", "productivity", "business"],
   "icons": [
-    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Start the guide", "short_name": "Start", "url": "./phase-1-about-me.html", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Browse sample prompts", "short_name": "Prompts", "url": "./phase-4-generate.html", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }] },
+    { "name": "Pro tips", "short_name": "Tips", "url": "./tips.html", "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }] }
+  ],
+  "screenshots": [
+    { "src": "assets/screenshot-wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "The Career Engine home page on desktop" },
+    { "src": "assets/screenshot-narrow.png", "sizes": "540x960", "type": "image/png", "form_factor": "narrow", "label": "The Career Engine home page on a phone" }
   ]
 }

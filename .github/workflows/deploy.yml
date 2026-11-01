@@ -1,7 +1,8 @@
 name: Build and deploy
 
 # Every push to main publishes the site to GitHub Pages.
-# Pull requests run the same checks but never publish anything.
+# Pull requests run the same build and checks but never publish anything;
+# they upload the built site as a downloadable "site-preview" artifact instead.
 on:
   push:
     branches: [main]
@@ -23,19 +24,36 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Assemble site into _site
-        run: |
-          mkdir _site
-          cp -r *.html css js assets favicon.ico site.webmanifest robots.txt sitemap.xml .nojekyll _site/
+      - name: Check that GitHub Pages is switched on
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
 
-      - name: Check pages, links and metadata
+      # Self-hosted fonts: the WOFF2 files come from the Fontsource npm packages.
+      # If this step fails the site still builds and uses system fonts.
+      - name: Download fonts
+        continue-on-error: true
+        run: |
+          mkdir -p .fontcache
+          cd .fontcache
+          npm install --no-audit --no-fund --ignore-scripts --no-package-lock \
+            @fontsource-variable/bricolage-grotesque@5 \
+            @fontsource-variable/inter@5 \
+            @fontsource/instrument-serif@5
+
+      - name: Assemble site into _site
+        id: build
+        run: |
+          SITE_URL=$(python3 .github/scripts/build.py _site)
+          echo "SITE_URL=$SITE_URL" >> "$GITHUB_ENV"
+
+      - name: Check pages, links, manifest and service worker
         run: python3 .github/scripts/check_site.py _site
 
       - name: Check external links (report only)
         uses: lycheeverse/lychee-action@v2
         continue-on-error: true
         with:
-          args: --no-progress --accept 200,206,403,429 --exclude 'fonts\.(googleapis|gstatic)\.com' --exclude-path _site/404.html '_site/**/*.html'
+          args: --no-progress --accept 200,206,403,429 --exclude-path _site/404.html '_site/**/*.html'
           fail: false
 
       - name: Lighthouse report (report only)

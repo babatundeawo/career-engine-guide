@@ -17,6 +17,13 @@ Please keep changes focused, keep the existing writing style, and do not add tra
 
 ## Working locally (developers only)
 
-The site has no build step. Serve the folder with any static server, for example `python3 -m http.server`, then open it in a browser. Before opening a pull request, run `python3 .github/scripts/check_site.py .` to check links and metadata.
+The pages are plain HTML, so they can be opened from any static server for quick edits. To produce exactly what is published, run:
+
+```
+python3 .github/scripts/build.py _site
+SITE_URL=https://babatundeawo.github.io/career-engine-guide/ python3 .github/scripts/check_site.py _site
+```
+
+The build script copies the site into `_site`, stamps the service worker and, if the font packages were downloaded into `.fontcache`, copies the fonts. Without them the site uses system fonts. The deploy workflow does all of this automatically.
 
 Design tokens (colours, type, spacing, motion) live at the top of `css/base.css`.

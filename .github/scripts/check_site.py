@@ -11,14 +11,16 @@ Everything else is left to the Lighthouse report.
 
 Usage: python3 .github/scripts/check_site.py _site
 """
+import json
+import os
 import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-SITE = 'https://babatundeawo.github.io/career-engine-guide/'
-NOT_INDEXED = {'404.html'}
+SITE = os.environ.get('SITE_URL', 'https://babatundeawo.github.io/career-engine-guide/')
+NOT_INDEXED = {'404.html', 'offline.html'}
 
 
 class Page(HTMLParser):
@@ -33,6 +35,8 @@ class Page(HTMLParser):
         self.links = []      # (attribute, value)
         self.imgs_without_alt = 0
         self.base = None
+        self.csp = None
+        self.scripts = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -42,6 +46,8 @@ class Page(HTMLParser):
             self._in_title = True
         elif tag == 'base':
             self.base = a.get('href')
+        elif tag == 'meta' and a.get('http-equiv') == 'Content-Security-Policy':
+            self.csp = a.get('content', '')
         elif tag == 'meta' and a.get('name'):
             self.meta[a['name']] = a.get('content', '')
         elif tag == 'h1':
@@ -49,12 +55,16 @@ class Page(HTMLParser):
         elif tag == 'link':
             if a.get('rel') == 'canonical':
                 self.canonical = a.get('href')
+            elif a.get('href') and a.get('rel') == 'preload':
+                pass  # font preloads are checked separately: missing fonts only warn
             elif a.get('href'):
                 self.links.append(('href', a['href']))
         elif tag == 'a' and a.get('href'):
             self.links.append(('href', a['href']))
         elif tag in ('script', 'img') and a.get('src'):
             self.links.append(('src', a['src']))
+            if tag == 'script':
+                self.scripts.append(a['src'])
             if tag == 'img' and 'alt' not in a:
                 self.imgs_without_alt += 1
         elif tag == 'use' and a.get('href'):
@@ -90,6 +100,12 @@ def main(root_arg):
             errors.append(f'{name}: missing canonical link')
         if p.h1 != 1:
             errors.append(f'{name}: expected exactly one <h1>, found {p.h1}')
+        if not p.csp:
+            errors.append(f'{name}: missing Content-Security-Policy meta tag')
+        elif 'googleapis' in p.csp or 'gstatic' in p.csp:
+            errors.append(f'{name}: CSP still allows Google Fonts (fonts must be self-hosted)')
+        if name not in NOT_INDEXED and 'js/pwa.js' not in p.scripts:
+            errors.append(f'{name}: js/pwa.js is not loaded')
         if p.imgs_without_alt:
             errors.append(f'{name}: {p.imgs_without_alt} image(s) without an alt attribute')
         if name not in NOT_INDEXED:
@@ -123,10 +139,59 @@ def main(root_arg):
         if len(names) > 1:
             errors.append(f'duplicate title "{title}" on: {", ".join(names)}')
 
-    for required in ('robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.ico', '404.html'):
+    for required in ("robots.txt", "sitemap.xml", "site.webmanifest", "favicon.ico", "404.html"):
         if not (root / required).exists():
             errors.append(f'missing {required}')
 
+    warnings = []
+    for page in root.glob('*.html'):
+        if re.search(r'fonts\.(googleapis|gstatic)\.com', page.read_text(encoding='utf8')):
+            errors.append(f'{page.name}: still references Google Fonts')
+
+    # Web app manifest: every referenced file must exist.
+    try:
+        manifest = json.loads((root / 'site.webmanifest').read_text(encoding='utf8'))
+        refs = [i['src'] for i in manifest.get('icons', [])] + [s['src'] for s in manifest.get('screenshots', [])]
+        for sc in manifest.get('shortcuts', []):
+            refs += [i['src'] for i in sc.get('icons', [])]
+            if not (root / sc['url'].lstrip('./').split('#')[0].split('?')[0]).exists():
+                errors.append(f'manifest shortcut points to a missing page: {sc["url"]}')
+        for ref in refs:
+            if not (root / ref).exists():
+                errors.append(f'manifest references a missing file: {ref}')
+        for key in ('name', 'short_name', 'id', 'start_url', 'scope', 'display', 'theme_color', 'background_color'):
+            if not manifest.get(key):
+                errors.append(f'manifest is missing "{key}"')
+        sizes = {i.get('sizes') for i in manifest.get('icons', []) if i.get('purpose', 'any') == 'any'}
+        if not {'192x192', '512x512'} <= sizes:
+            errors.append('manifest needs 192x192 and 512x512 icons')
+        if not any('maskable' in i.get('purpose', '') for i in manifest.get('icons', [])):
+            errors.append('manifest needs a maskable icon')
+    except (OSError, ValueError) as exc:
+        errors.append(f'site.webmanifest is not valid JSON: {exc}')
+
+    # Service worker: version stamped, every precached file exists, offline page present.
+    sw_path = root / 'sw.js'
+    if not sw_path.exists():
+        errors.append('missing sw.js')
+    else:
+        sw = sw_path.read_text(encoding='utf8')
+        m = re.search(r'/\*PRECACHE\*/(.*?)/\*END\*/', sw, re.S)
+        if "const VERSION = 'dev'" in sw or not m:
+            errors.append('sw.js was not stamped by build.py')
+        else:
+            for entry in json.loads(m.group(1)):
+                if entry != './' and not (root / entry).exists():
+                    errors.append(f'sw.js precaches a missing file: {entry}')
+    if not (root / 'offline.html').exists():
+        errors.append('missing offline.html')
+
+    for font in ('bricolage-grotesque-latin-wght-normal.woff2', 'inter-latin-wght-normal.woff2', 'instrument-serif-latin-400-italic.woff2'):
+        if not (root / 'fonts' / font).exists():
+            warnings.append(f'font file missing, system fonts will be used: fonts/{font}')
+
+    for w in warnings:
+        print(f'Warning: {w}')
     if errors:
         print('Site check FAILED:')
         for e in errors:

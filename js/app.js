@@ -153,6 +153,33 @@
     });
   });
 
+
+  /* ---------- "Try again" buttons (offline page) ---------- */
+  document.querySelectorAll('[data-reload]').forEach(function (b) {
+    b.addEventListener('click', function () { window.location.reload(); });
+  });
+
+  /* ---------- Resume where you left off ---------- */
+  var PAGES = {
+    'phase-1-about-me.html': 'Phase 1 \u00b7 About Me',
+    'phase-2-master-cv.html': 'Phase 2 \u00b7 Master CV',
+    'phase-3-claude-setup.html': 'Phase 3 \u00b7 Claude Setup',
+    'phase-4-generate.html': 'Phase 4 \u00b7 Generate'
+  };
+  var here = window.location.pathname.split('/').pop();
+  if (here && here.indexOf('.') < 0) { here += '.html'; }
+  if (PAGES[here]) { store('ace-last', here); }
+  var ctas = document.querySelector('.hero-ctas');
+  var last = null;
+  try { last = localStorage.getItem('ace-last'); } catch (e) { /* storage blocked */ }
+  if (ctas && PAGES[last] && document.querySelector('.hero-grid')) {
+    var link = document.createElement('a');
+    link.className = 'resume-link';
+    link.href = last;
+    link.textContent = 'Continue where you left off: ' + PAGES[last];
+    ctas.insertAdjacentElement('afterend', link);
+  }
+
   /* ---------- Print: expand every prompt so nothing is hidden on paper ---------- */
   window.addEventListener('beforeprint', function () {
     document.querySelectorAll('details.prompt-card').forEach(function (d) { d.setAttribute('open', ''); });
