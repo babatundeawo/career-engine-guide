@@ -26,7 +26,7 @@ jobs:
 
       - name: Check that GitHub Pages is switched on
         if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       # Self-hosted fonts: the WOFF2 files come from the Fontsource npm packages.
       # If this step fails the site still builds and uses system fonts.
